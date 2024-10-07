@@ -1,0 +1,9 @@
+* {
+    box-sizing: border-box;
+    color: whitesmoke;
+}
+
+body {
+    font-family: 'Inter', sans-serif;
+    background-color: #1d3557;
+}
