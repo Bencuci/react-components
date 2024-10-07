@@ -5,6 +5,7 @@
     border: none;
 }
 
+#Shapes
 .square {
     border-radius: 4px;
 }
@@ -13,6 +14,7 @@
     border-radius: 12px;
 }
 
+#Themes
 .gray {
     background-color: #F3F4F6;
     color: #1F2937;

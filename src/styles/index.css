@@ -7,3 +7,9 @@ body {
     font-family: 'Inter', sans-serif;
     background-color: #1d3557;
 }
+
+main {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}

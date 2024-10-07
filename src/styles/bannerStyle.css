@@ -1,0 +1,25 @@
+.banner {
+    border: none;
+    border-radius: 6px;
+    padding: 16px;
+}
+
+.error {
+    background-color: #FEE2E2;
+    color: #991B1B;
+}
+
+.warning {
+    background-color: #FEF3C7;
+    color: #92400E
+}
+
+.success {
+    background-color: #D1FAE5;
+    color: #065F46;
+}
+
+.neutral {
+    background-color: #DBEAFE;
+    color: #1E40AF;
+}
