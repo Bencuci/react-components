@@ -1,9 +1,24 @@
 .banner {
     border: none;
     border-radius: 6px;
-    padding: 16px;
+    padding: 1.2em 1em;
+    margin: 1em;
 }
 
+.banner-head {
+    font-weight: 700;
+    margin-bottom: .5em;
+}
+
+.banner-text {
+    margin-left: 1.75em;
+}
+
+i {
+    margin: 0 .75em 0 0;
+}
+
+/* Themes */
 .error {
     background-color: #FEE2E2;
     color: #991B1B;
@@ -23,3 +38,4 @@
     background-color: #DBEAFE;
     color: #1E40AF;
 }
+

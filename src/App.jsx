@@ -13,8 +13,11 @@ export default function App() {
                 <section>
                     <Banner theme="success">
                         <Banner.Head>
-                            Banner
+                            Congratulations!
                         </Banner.Head>
+                        <Banner.Text>
+                            lorem ipsum dolor sit amet consectetur adipisicing elit. Aliquid pariatur, ipsum similique veniam.
+                        </Banner.Text>
                     </Banner>
                 </section>
             </main>
