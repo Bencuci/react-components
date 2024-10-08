@@ -6,10 +6,12 @@ export default function Testimonial({children, imgPath="/src/images/testimonial.
     return (
         <div className={classnames("testimonial", rest.className)}>
             <img src={imgPath}/>
-            <i class="fa-solid fa-quote-left"></i>
-            <p>{children}</p>
-            <aside className="name">{name}</aside>
-            <aside className="title">{title}</aside>
+            <article>
+                <i className="fa-solid fa-quote-left"></i>
+                <p>{children}</p>
+                <aside className="name">{name}</aside>
+                <aside className="title">{title}</aside>
+            </article>
         </div>
     )
 }

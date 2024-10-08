@@ -30,3 +30,26 @@ aside {
     object-fit: cover;
     object-position: 50% 37%;
 }
+
+@media (min-width: 600px) {
+    .testimonial {
+        padding-left: 4em;
+        padding-right: 4em;
+        display: flex;
+        gap: 1.7em;
+        position: relative;
+        height: 380px;
+    }
+
+    .testimonial article {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+    }
+
+    .testimonial img {
+        max-width: 384px;
+        height: 464px;
+        margin-top: -3.65em;
+    }
+}
