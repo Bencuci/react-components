@@ -4,7 +4,7 @@
 
 body {
     font-family: 'Inter', sans-serif;
-    background-color: #1d3557;
+    background-color: #12233B;
 }
 
 main {
@@ -12,4 +12,8 @@ main {
     flex-direction: column;
     align-items: center;
     color: whitesmoke;
+}
+
+section {
+    margin: 2em .5em;
 }

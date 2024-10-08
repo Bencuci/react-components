@@ -1,0 +1,32 @@
+.testimonial {
+    padding: 1em 1em 2em;
+    background-color: #457b9d77;
+    max-width: 1358px;
+}
+
+.testimonial p {
+    font-size: 1.5rem;
+    margin-top: 0;
+}
+
+.testimonial i {
+    margin: .4em 0 .2em;
+    font-size: 3em;
+    color: #ffffff55;
+}
+
+.testimonial .name {
+    font-weight: 700;
+}
+
+aside {
+    font-size: .8rem;
+}
+
+.testimonial img {
+    width: 100%;
+    border-radius: 12px;
+    height: 206px;
+    object-fit: cover;
+    object-position: 50% 37%;
+}

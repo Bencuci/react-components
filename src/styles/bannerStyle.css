@@ -2,7 +2,6 @@
     border: none;
     border-radius: 6px;
     padding: 1.2em 1em;
-    margin: 1em;
 }
 
 .banner-head {
@@ -14,7 +13,7 @@
     margin-left: 1.75em;
 }
 
-i {
+.banner i {
     margin: 0 .75em 0 0;
 }
 
