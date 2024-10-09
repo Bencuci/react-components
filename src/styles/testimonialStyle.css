@@ -33,8 +33,8 @@ aside {
 
 @media (min-width: 600px) {
     .testimonial {
-        padding-left: 4em;
-        padding-right: 4em;
+        padding-left: 1em;
+        padding-right: 1em;
         display: flex;
         gap: 1.7em;
         position: relative;
@@ -47,9 +47,25 @@ aside {
         justify-content: center;
     }
 
+    .testimonial p {
+        font-size: 1.1rem;
+    }
+
     .testimonial img {
         max-width: 384px;
+        min-width: 300px;
         height: 464px;
         margin-top: -3.65em;
+    }
+}
+
+@media (min-width: 900px) {
+    .testimonial {
+        padding-left: 4em;
+        padding-right: 4em;
+    }
+
+    .testimonial article {
+        max-width: none;
     }
 }
