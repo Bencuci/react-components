@@ -8,7 +8,12 @@ export default function TooltipPopup({children, ...rest}) {
 
     return (
         <div 
-            className={classnames("popup", variant, theme, rest.className)}
+            className={classnames(
+                "popup", 
+                variant, 
+                theme, 
+                rest.className, 
+                {"popup-showup":visible})}
             style={{
                 opacity: visible ? 1 : 0,
                 visibility: visible ? 'visible' : 'hidden'

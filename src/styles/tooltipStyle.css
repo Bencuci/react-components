@@ -19,10 +19,13 @@
     padding: 1em;
     gap: 1em;
     z-index: 2;
-    transition: opacity 0.1s ease, visibility 0.1s ease;
     transform: translateX(-50%);
     border-radius: 8px;
     box-shadow: 0px 10px 15px -3px #0000005A;
+}
+
+.popup-showup {
+    transition: opacity 0.4s, visibility 0.4s;
 }
 
 .popup:after {
