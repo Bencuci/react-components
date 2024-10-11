@@ -20,7 +20,7 @@ export default function App() {
                             Congratulations!
                         </Banner.Head>
                         <Banner.Text>
-                            lorem ipsum dolor sit amet consectetur adipisicing elit. Aliquid pariatur, ipsum similique veniam.
+                            You have found a very easy way to implement custom components!
                         </Banner.Text>
                     </Banner>
                 </section>
@@ -29,7 +29,7 @@ export default function App() {
                         title="Easy Deployment"
                         iconPath="/src/images/cardIcon.png"
                     >
-                        Ac tincidunt sapien vehicula erat auctor pellentesque rhoncus. Et magna sit morbi lobortis.
+                        Components are designed for Developers to utilize them, without struggle.
                     </Card>
                 </section>
                 <section>
@@ -38,31 +38,38 @@ export default function App() {
                         title="Front-end Developer"
                         imgPath="/src/images/testimonial.jpeg"
                     >
-                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed urna nulla vitae laoreet augue. Amet feugiat est integer dolor auctor adipiscing nunc urna, sit. 
+                        I love using Benjamin's custom components. They are so easy to use and customize. It helps a lot when developing!
+                    </Testimonial>
+                </section>
+                <section>
+                    <Testimonial
+                        name="May Andersons"
+                        title="Front-end Developer"
+                    >
+                        I love using Benjamin's custom components. They are so easy to use and customize. It helps a lot when developing!
                     </Testimonial>
                 </section>
                 <section>
                     <Tooltip
-                        title="Tooltip"
-                        theme="bold-gray"
+                        title="Easter Egg"
+                        theme="bold-blue"
                     >
                         <Tooltip.Trigger>
                             <h3>
-                                Tooltip:Hover
+                                Tooltip: Hover
                             </h3>
                         </Tooltip.Trigger>
                         <Tooltip.Popup>
-                            Lorem ipsum dolor sit 
-                            amet consectetur adipisicing elit oluptatum tenetur.
+                            I allow everyone to use the components I created, for free.
                         </Tooltip.Popup>
                     </Tooltip>
                 </section>
                 <section>
                     <Toast>
                         <Toast.Trigger
-                            variant="error"
-                            title="Title"
-                            text="Your work has been saved"
+                            variant="information"
+                            title="Mail"
+                            text="You have got a new mail!"
                         >
                             <button>Trigger Notification</button>
                         </Toast.Trigger>

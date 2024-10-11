@@ -1,38 +1,58 @@
-.testimonial {
+.testimonial-i {
     padding: 1em 1em 2em;
     background-color: #457b9d77;
     max-width: 1358px;
+    margin-top: 5em;
 }
 
+.testimonial {
+    padding: 2em 1em 4em;
+    max-width: 1358px;
+    background-color: #F9FAFB;
+    color: #111827;
+    background-image: url("../images/Path.png");
+    background-repeat: no-repeat;
+    background-position: left bottom;
+}
+
+.testimonial-i p,
 .testimonial p {
     font-size: 1.5rem;
     margin-top: 0;
 }
 
-.testimonial i {
+.testimonial-i i {
     margin: .4em 0 .2em;
     font-size: 3em;
     color: #ffffff55;
 }
 
+.testimonial-i .name,
 .testimonial .name {
     font-weight: 700;
 }
 
-aside {
+article aside {
     font-size: .8rem;
 }
 
-.testimonial img {
+.testimonial-i img {
     width: 100%;
     border-radius: 12px;
     height: 206px;
     object-fit: cover;
     object-position: 50% 37%;
+    margin-top: -110px;
+}
+
+.testimonial img {
+    width: 180px;
+    margin: 1.3em auto;
+    display: block;
 }
 
 @media (min-width: 600px) {
-    .testimonial {
+    .testimonial-i {
         padding-left: 1em;
         padding-right: 1em;
         display: flex;
@@ -41,17 +61,23 @@ aside {
         height: 380px;
     }
 
-    .testimonial article {
+    .testimonial {
+        text-align: center;
+        padding-left: 10em;
+        padding-right: 10em;
+    }
+
+    .testimonial-i article {
         display: flex;
         flex-direction: column;
         justify-content: center;
     }
 
-    .testimonial p {
+    .testimonial-i p {
         font-size: 1.1rem;
     }
 
-    .testimonial img {
+    .testimonial-i img {
         max-width: 384px;
         min-width: 300px;
         height: 464px;
@@ -60,12 +86,17 @@ aside {
 }
 
 @media (min-width: 900px) {
-    .testimonial {
+    .testimonial-i {
         padding-left: 4em;
         padding-right: 4em;
     }
 
-    .testimonial article {
+    .testimonial {
+        padding-left: 15em;
+        padding-right: 15em;
+    }
+
+    .testimonial-i article {
         max-width: none;
     }
 }

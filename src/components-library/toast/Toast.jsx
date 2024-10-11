@@ -1,6 +1,7 @@
 import React from "react"
 import ToastItem from "./ToastItem"
 import "/src/styles/toastStyle.css"
+import {v4 as uuidv4} from "uuid"
 
 const ToastContext = React.createContext()
 export { ToastContext }
@@ -9,7 +10,7 @@ export default function Toast({children, ...rest}) {
     const [toasts, setToasts] = React.useState([])
 
     function addToast(variant, title, text) {
-        const newToast = {variant, title, text, id: Date.now()}
+        const newToast = {variant, title, text, id: uuidv4()}
         setToasts(prevToasts => [...prevToasts, newToast])
     }
 
