@@ -4,6 +4,7 @@ import Banner from "./components-library/banner";
 import Card from "./components-library/card/Card"
 import Testimonial from "./components-library/testimonial/Testimonial"
 import Tooltip from "./components-library/tooltip"
+import Toast from "./components-library/toast"
 
 export default function App() {
     return (
@@ -51,9 +52,21 @@ export default function App() {
                             </h3>
                         </Tooltip.Trigger>
                         <Tooltip.Popup>
-                            Lorem ipsum dolor sit amet consectetur adipisicing elit oluptatum tenetur.
+                            Lorem ipsum dolor sit 
+                            amet consectetur adipisicing elit oluptatum tenetur.
                         </Tooltip.Popup>
                     </Tooltip>
+                </section>
+                <section>
+                    <Toast>
+                        <Toast.Trigger
+                            variant="error"
+                            title="Title"
+                            text="Your work has been saved"
+                        >
+                            <button>Trigger Notification</button>
+                        </Toast.Trigger>
+                    </Toast>
                 </section>
             </main>
         </div>

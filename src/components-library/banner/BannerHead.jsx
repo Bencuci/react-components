@@ -12,10 +12,6 @@ export default function BannerHead({ className, children, ...rest }) {
             icon = <i className="fa-solid fa-triangle-exclamation"></i>
             break
 
-        case "neutral":
-            icon = <i className="fa-solid fa-circle-info"></i>
-            break
-
         case "success":
             icon = <i className="fa-solid fa-circle-check"></i>
             break
@@ -25,7 +21,7 @@ export default function BannerHead({ className, children, ...rest }) {
             break
 
         default:
-            icon = null
+            icon  = <i className="fa-solid fa-circle-info"></i>
             break
     }
 

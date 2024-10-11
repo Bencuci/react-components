@@ -1,0 +1,64 @@
+.toast-list {
+    display: flex;
+    flex-direction: column;
+    position: fixed;
+    right: 1rem;
+    top: 1rem;
+    gap: .4rem;
+    z-index: 1000;
+}
+
+.toast {
+    display: flex;
+    border-radius: 8px;
+    border: none;
+    padding: 1em;
+    padding-right: 2em;
+    opacity: 0;
+    transform: translateX(100%);
+    transition: opacity 0.3s ease, transform 0.3s ease;
+    gap: 1rem;
+}
+
+.toast-enter {
+    opacity: 1;
+    transform: translateX(0);
+}
+
+.toast-exit {
+    opacity: 0;
+    transform: translateX(100%);
+}
+
+.toast p {
+    margin: 0;
+}
+
+.toast h4 {
+    margin: 0 0 .4em 0;
+}
+
+.toast article {
+    margin-left: 0.5em;
+}
+
+/* Themes */
+.toast-success {
+    background-color: #ECFDF5;
+    color: #047857;
+}
+
+.toast-warning {
+    background-color: #FFFBEB;
+    color: #B45309;
+}
+
+.toast-error {
+    background-color: #FEF2F2;
+    color: #B45309;
+}
+
+.toast-information {
+    background-color: #EFF6FF;
+    color: #1C51B9;
+}
