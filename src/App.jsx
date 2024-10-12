@@ -12,10 +12,10 @@ export default function App() {
             <main>
                 <h1>Custom Components</h1>
                 <section>
-                    <Badge shape="pill" theme="red">Badge</Badge>
+                    <Badge shape="pill" theme="blue">Badge</Badge>
                 </section>
                 <section>
-                    <Banner theme="success">
+                    <Banner theme="neutral">
                         <Banner.Head>
                             Congratulations!
                         </Banner.Head>
