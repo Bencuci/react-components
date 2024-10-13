@@ -18,7 +18,7 @@ export default function Testimonial({children, imgPath,  name, title, ...rest}) 
                 :
                 <div className={classnames("testimonial", rest.className)}>
                     <article>
-                        <img src="/src/images/testimonial-default.png" />
+                        <img src="/images/testimonial-default.png" />
                         <p>{children}</p>
                         <aside className="name">{name}</aside>
                         <aside className="title">{title}</aside>
