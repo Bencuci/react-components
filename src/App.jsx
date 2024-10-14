@@ -27,7 +27,7 @@ export default function App() {
                 <section>
                     <Card
                         title="Easy Deployment"
-                        iconPath="/src/images/cardIcon.png"
+                        iconPath="/images/cardIcon.png"
                     >
                         Components are designed for Developers to utilize them, without struggle.
                     </Card>
@@ -36,7 +36,7 @@ export default function App() {
                     <Testimonial
                         name="May Andersons"
                         title="Front-end Developer"
-                        imgPath="/src/images/testimonial.jpeg"
+                        imgPath="/images/testimonial.jpeg"
                     >
                         I love using Benjamin's custom components. They are so easy to use and customize. It helps a lot when developing!
                     </Testimonial>
