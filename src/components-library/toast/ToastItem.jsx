@@ -13,7 +13,7 @@ export default function ToastItem({id, variant, title, text, removeToast, ...res
         }, 3000)
 
         return () => clearTimeout(timer)
-    }, [id])
+    }, [])
 
     const allClasses = classnames(
         'toast', 
