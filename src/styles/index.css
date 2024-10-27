@@ -19,11 +19,20 @@ body {
     overflow: hidden;
 }
 
+.footer-container {
+    max-width: 800px;
+    width: 90%;
+    display: flex;
+    align-items: center;
+    gap: 1.71em;
+}
+
 main {
     display: flex;
     flex-direction: column;
     justify-content: center;
     height: 100%;
+    width: 100%;
     flex: 1;
 }
 
@@ -37,6 +46,9 @@ header {
 }
 
 footer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
     background-color: #0000004b;
     padding: 0em 1.6em .7em;
     width: 100%;
@@ -61,12 +73,15 @@ nav {
 }
 
 .home {
+    flex: 1;
     margin: 0 2em;
     text-align: center;
     display: flex;
+    align-items: center;
+    gap: 1.5em;
     flex-direction: column;
     height: 100%;
-    justify-content: space-between;
+    justify-content: space-evenly;
 }
 
 .header-top {
@@ -74,6 +89,13 @@ nav {
     align-items: center;
     max-width: 800px;
     margin: 0 auto;
+}
+
+.footer-links {
+    font-size: 1.6em;
+    display: flex;
+    gap: 20px;
+    margin-left: auto;
 }
 
 .slide {
@@ -128,6 +150,7 @@ nav a:hover {
     color: white;
     font-size: 2.3em;
     transition: transform 230ms ease, color 250ms linear;
+    cursor: pointer;
 }
 
 .collapse-btn.opened {
@@ -174,4 +197,25 @@ hr {
 nav hr {
     margin: -.2em -.5em;
     width: 118%;
+}
+
+@media (min-width: 1025px) {
+    .home {
+        flex-direction: row;
+        justify-content: space-around;
+    }
+
+    .home-text {
+        font-size: 2rem;
+        max-width: 700px;
+    }
+
+    .discover {
+        padding: 1em 3.4em;
+        font-size: 2rem;
+        border-radius: 15px;
+        display: inline-block;
+        align-self: center;
+        margin: .3em 0 1em
+    }
 }
