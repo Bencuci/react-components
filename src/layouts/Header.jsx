@@ -23,7 +23,7 @@ export default function Header() {
                 <i className="fa-solid fa-bars"></i>
             </button>
 
-            <nav className={`fade ${collapsed ? "" : "visible"}`}>
+            <nav className={`slide ${collapsed ? "" : "visible"}`}>
                 <NavLink
                     to="/badges"
                     style={({ isActive }) => (isActive ? activeStyles : null)}
