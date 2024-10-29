@@ -120,7 +120,7 @@ export default function Header() {
                     onClick={toggleLibCollapsed}
                     className={`collapse-lib-btn ${libCollapsed ? "" : "highlighted"}`}
                 >
-                    <span><i className="fa-solid fa-angle-left"></i></span>
+                    <span><i className="fa-solid fa-caret-left"></i></span>
                     Library
                 </button>
             </nav>
