@@ -63,34 +63,29 @@ nav {
     display: flex;
     flex-direction: column;
     position: absolute;
-    right: .5em;
+    right: .8em;
     top: 100%;
-    padding: 1em;
-    gap: 1em;
+    padding: 0 1em;
     background-color: #0f1214;
     border-radius: 10px;
     font-size: 1.4rem;
-    box-shadow: -5px 15px 12px 0px black;
+    box-shadow: -2px 4px 7px 2px black;
     z-index: 3;
+}
+
+.lib-menu {
+    right: 7.5em;
 }
 
 .home {
     flex: 1;
     margin: 0 2em;
-    text-align: center;
     display: flex;
     align-items: center;
     gap: 1.5em;
     flex-direction: column;
     height: 100%;
     justify-content: space-evenly;
-}
-
-.header-top {
-    display: flex;
-    align-items: center;
-    max-width: 800px;
-    margin: 0 auto;
 }
 
 .footer-links {
@@ -114,17 +109,55 @@ nav {
     transform: translateX(0);
 }
 
+.highlighted {
+    color: #0073e6 !important;
+}
+
 .site-logo {
     font-size: 1.4rem;
     color: #0073e6;
     font-family: 'Courier New', Courier, monospace;
     letter-spacing: .1em;
-    margin-right: auto;
+}
+
+.extra-links {
+    display: none;
+    gap: 1em;
+    margin-left: 2.5em;
+}
+
+.collapse-lib-btn {
+    color: whitesmoke;
+    background-color: transparent;
+    border: none;
+    font-size: 1.5rem;
+    transition: color 100ms ease;
+    align-self: start;
+}
+
+nav button.collapse-lib-btn {
+    padding: 1em 0;
+}
+
+.library-button-container .collapse-lib-btn {
+    display: none;
 }
 
 a {
     color: rgba(245, 245, 245, 0.938);
     text-decoration: none;
+    transition: color 100ms ease;
+}
+
+nav a {
+    padding: 1em 0;
+}
+
+button span {
+    position: absolute;
+    font-size: .7rem;
+    left: 11px;
+    bottom: 30px;
 }
 
 .home p {
@@ -142,12 +175,15 @@ a {
     margin: 0;
 }
 
-nav a:hover {
-    color: #0073e6;
+.library-button-container {
+    margin-left: auto;
+    display: flex;
+    align-items: center;
+    gap: 1em;
+    cursor: pointer;
 }
 
 .collapse-btn {
-    margin-left: auto;
     background-color: transparent;
     border: none;
     color: white;
@@ -176,7 +212,8 @@ nav a:hover {
 
 .discover:hover {
     background-color: #0073e68a;
-    transform: scale(1.15);
+    transform: scale(1.1);
+    color: whitesmoke;
 }
 
 .fade-image {
@@ -187,8 +224,9 @@ nav a:hover {
 .home img {
     width: 100%;
     max-width: 400px;
-    mask-image: radial-gradient(circle, rgba(0, 0, 0, 1) 50%, rgba(0, 0, 0, 0) 100%);
-    -webkit-mask-image: radial-gradient(circle, rgba(0, 0, 0, 1) 15%, rgba(255, 0, 0, 0) 80%);
+    mask-image: radial-gradient(circle, rgba(0, 0, 0, 1) 38%, rgba(0, 0, 0, 0) 82%);
+    -webkit-mask-image: radial-gradient(circle, rgba(0, 0, 0, 1) 38%, rgba(0, 0, 0, 0) 82%);
+    margin: -2em 0 -3em;
 }
 
 hr {
@@ -202,36 +240,95 @@ nav hr {
     width: 118%;
 }
 
+.home-text {
+    text-align: center;
+}
+
+/* Desktop layouts */
 @media (min-width: 1320px) {
+    header {
+        max-width: 1200px;
+    }
+
     .home {
         flex-direction: row-reverse;
-        justify-content: space-around;
+        justify-content: center;
         gap: 0;
+        margin-left: 10em;
     }
 
     .home-text {
-        font-size: 2rem;
+        font-size: 1.6rem;
         max-width: 700px;
+        text-align: left;
+        margin: 0 2em 0 0;
     }
 
     .home img {
-        max-width: 700px;
+        max-width: 620px;
+    }
+
+    .site-logo {
+        font-size: 1.8rem;
     }
 
     .discover {
         padding: 1em 3.4em;
         font-size: 2rem;
         border-radius: 15px;
+        margin-top: 1.3em;
+    }
+
+    .extra-links {
+        display: flex;
+    }
+
+    .menu {
+        display: none;
+    }
+
+    .lib-menu {
+        display: flex;
+        right: 0;
+    }
+
+    .collapse-lib-btn {
+        display: none;
+        align-self: center;
+    }
+
+    .library-button-container .collapse-lib-btn {
+        display: inline;
+        cursor: pointer;
+    }
+
+    a:hover {
+        color: #0073e6;
+    }
+
+    .footer-links {
+        flex-direction: row;
+        margin-left: auto;
+        font-size: 2em;
+        gap: .5em;
+    }
+
+    .discover {
+        padding: .7em 3.2em;
+        font-size: 2rem;
+        border-radius: 15px;
     }
 }
 
-@media (min-width: 720px) {
+/* Tablet views */
+@media (min-width: 720px) and (max-width: 1320px) {
     .home-text {
         font-size: 1.6rem;
+        margin: 0em 4em;
     }
 
     .home img {
-        max-width: 600px;
+        max-width: 580px;
     }
 
     .discover {
@@ -245,5 +342,11 @@ nav hr {
         margin-left: auto;
         font-size: 2em;
         gap: .5em;
+    }
+}
+
+@media (max-width: 1320px) {
+    .lib-menu.slide {
+        transform: translateX(0) !important;
     }
 }
