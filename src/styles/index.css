@@ -29,6 +29,8 @@ body {
 }
 
 main {
+    position: relative;
+    padding: 0 1.5em;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -52,7 +54,7 @@ footer {
     align-items: center;
     background-color: #0000004b;
     color: #b3bec9aa;
-    padding: 0em 1.6em .7em;
+    padding: 0em 1.6em .2em;
     width: 100%;
     margin-top: auto;
 }
@@ -79,7 +81,6 @@ nav {
 
 .home {
     flex: 1;
-    margin: 0 2em;
     display: flex;
     align-items: center;
     gap: 1.5em;

@@ -1,11 +1,13 @@
 import React, { useState, useEffect, useRef} from "react"
-import { Link, NavLink } from "react-router-dom"
+import { Link, NavLink, useLocation} from "react-router-dom"
 
 export default function Header() {
     const [collapsed, setCollapsed] = useState(true)
     const [libCollapsed, setLibCollapsed] = useState(true)
     const [screenWidth, setScreenWidth] = useState(window.innerWidth)
 
+    const location = useLocation() // Detects route changes
+    
     // refs for listening if clicks are outside of menus.
     const menuRef = useRef()
     const libMenuRef = useRef()
@@ -20,6 +22,12 @@ export default function Header() {
     const collapseBtnToggle = screenWidth>1320 ? toggleLibCollapsed : toggleCollapsed
     // If the animated button is open or closed (used for conditionally rendering library sub-menu in mobile view)
     const isBtnOpen = screenWidth>1320 ? !libCollapsed : !collapsed
+
+    // Collapse menus when switching to new page
+    useEffect(() => {
+        setCollapsed(true)
+        setLibCollapsed(true)
+    }, [location.pathname])
 
     // Listening screen width dynamically.  used in onClick event of collapse-btn
     useEffect(() => {
