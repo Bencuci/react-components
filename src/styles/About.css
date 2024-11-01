@@ -162,7 +162,7 @@
     }
 }
 
-@media (min-width: 391px) and (max-width: 719px) {
+@media (min-width: 420px) and (max-width: 719px) {
     .about h2 {
         font-size: 2rem
     }

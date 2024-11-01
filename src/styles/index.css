@@ -117,7 +117,7 @@ nav {
 .site-logo {
     font-size: 1.4rem;
     color: #0073e6;
-    font-family: 'Courier New', Courier, monospace;
+    font-family: 'Courier New', Courier, monospace !important;
     letter-spacing: .1em;
 }
 
