@@ -117,7 +117,7 @@ nav {
 .site-logo {
     font-size: 1.4rem;
     color: #0073e6;
-    font-family: 'Courier New', Courier, monospace !important;
+    font-family: "Oxanium", sans-serif;
     letter-spacing: .1em;
 }
 
@@ -277,7 +277,6 @@ nav hr {
 
     .site-logo {
         font-size: 1.8rem;
-        font-family: "Oxanium", sans-serif;
     }
 
     .discover {
