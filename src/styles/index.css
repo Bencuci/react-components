@@ -233,7 +233,8 @@ header img {
     max-width: 400px;
     mask-image: radial-gradient(circle, rgba(0, 0, 0, 1) 38%, rgba(0, 0, 0, 0) 82%);
     -webkit-mask-image: radial-gradient(circle, rgba(0, 0, 0, 1) 38%, rgba(0, 0, 0, 0) 82%);
-    margin: -2em 0 -3em;
+    margin: -1em 0 -2em;
+    align-self: center;
 }
 
 hr {
