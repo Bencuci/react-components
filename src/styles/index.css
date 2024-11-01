@@ -222,6 +222,12 @@ button span {
     display: inline-block;
 }
 
+header img {
+    width: 40px;
+    margin-right: 1em;
+    margin-bottom: .3em;
+}
+
 .home img {
     width: 100%;
     max-width: 400px;
@@ -271,6 +277,7 @@ nav hr {
 
     .site-logo {
         font-size: 1.8rem;
+        font-family: "Oxanium", sans-serif;
     }
 
     .discover {

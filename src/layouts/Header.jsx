@@ -73,6 +73,7 @@ export default function Header() {
 
     return (
         <header>
+            <img src="/images/logo.png" />
             <Link className="site-logo" to="/">Custom-Components</Link>
 
             {/* Navigation links while above 1320px width */}
