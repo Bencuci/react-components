@@ -1,8 +1,9 @@
 .testimonial-i {
     padding: 1em 1em 2em;
-    background-color: #457b9d77;
+    background-color: #132b41;
     max-width: 1358px;
-    margin-top: 5em;
+    margin-top: 6em;
+    border-radius: 7px;
 }
 
 .testimonial {
@@ -19,6 +20,14 @@
 .testimonial p {
     font-size: 1.5rem;
     margin-top: 0;
+}
+
+.testimonial p{
+    color: #111827;
+}
+
+.testimonial-i p {
+    color: whitesmoke;
 }
 
 .testimonial-i i {
@@ -89,6 +98,8 @@ article aside {
     .testimonial-i {
         padding-left: 4em;
         padding-right: 4em;
+        margin-top: 3em;
+        margin-bottom: 3em;
     }
 
     .testimonial {

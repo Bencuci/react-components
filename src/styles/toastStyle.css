@@ -43,22 +43,26 @@
 }
 
 /* Themes */
-.toast-success {
+.toast-success,
+.toast-success p {
     background-color: #ECFDF5;
     color: #047857;
 }
 
-.toast-warning {
+.toast-warning,
+.toast-warning p  {
     background-color: #FFFBEB;
     color: #B45309;
 }
 
-.toast-error {
+.toast-error,
+.toast-error p {
     background-color: #FEF2F2;
     color: #B45309;
 }
 
-.toast-information {
+.toast-information,
+.toast-information p {
     background-color: #EFF6FF;
     color: #1C51B9;
 }

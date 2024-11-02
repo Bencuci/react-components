@@ -11,6 +11,10 @@
     align-items: center;
 }
 
+.about-me p {
+    color: whitesmoke;
+}
+
 .pp-desc-container {
     display: flex;
     align-items: center;

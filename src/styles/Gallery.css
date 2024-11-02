@@ -1,6 +1,6 @@
 /* LAYOUTS */
 .gallery {
-    padding: 0 1em;
+    padding: 0 .4em;
 }
 
 .gallery section {
@@ -8,20 +8,32 @@
     flex-direction: column;
     align-items: center;
     gap: 1em;
+    padding: 1.3em 0;
+    border-bottom: 1px solid black;
 }
 
 .gallery article {
     display: flex;
     flex-direction: column;
-    gap: 1em;
+    gap: .5em;
 }
 
 .gallery .badge-container {
-    display: flex;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1em 15vw;
 }
 
 
 /* TEXTS */
+.gallery section h1 {
+    margin: -.8em 0 0;
+}
+
+.gallery section p {
+    margin: 0
+}
+
 .gallery article h3 {
     align-self: center;
     margin: 0;
@@ -39,4 +51,18 @@
 
 .gallery article span {
     font-weight: bold;
+}
+
+/* Others */
+.toast-tooltip-trigger {
+    padding: 1em 3em;
+    background-color: transparent;
+    color: #3399ff;
+    border: 1px solid #0073e6;
+    border-radius: 50px;
+    cursor: pointer;
+}
+
+.toast-tooltip-trigger:hover {
+    background-color: #0C1823;
 }

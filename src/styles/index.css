@@ -151,6 +151,10 @@ nav button.collapse-lib-btn {
     display: none;
 }
 
+p {
+    color: #b3bec9;
+}
+
 a {
     color: rgba(245, 245, 245, 0.938);
     text-decoration: none;
@@ -363,5 +367,21 @@ nav hr {
 @media (max-width: 1320px) {
     .lib-menu.slide {
         transform: translateX(0) !important;
+    }
+}
+
+@media (max-width: 400px) {
+    .site-logo {
+        font-size: 1.3rem;
+    }
+
+    header img {
+        margin-right: .5em;
+    }
+}
+
+@media (max-width: 364px) {
+    .site-logo {
+        font-size: 1.15rem;
     }
 }
