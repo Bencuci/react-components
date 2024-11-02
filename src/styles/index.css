@@ -1,3 +1,12 @@
+/* 0073e6, 0f1214, 16212c, b3bec9, 3399ff */
+/*  
+    Background-Primary: 0f1214
+    Background-Secondary: 0C1823
+    Primary: 0073e6
+    Secondary: 3399ff
+    p: b3bec9
+*/
+
 /* Layouts */
 
 * {
@@ -59,16 +68,14 @@ footer {
     margin-top: auto;
 }
 
-/* 0073e6, 0f1214, 16212c, b3bec9, 3399ff */
-
 nav {
     display: flex;
     flex-direction: column;
     position: absolute;
-    right: .8em;
+    right: .5em;
     top: 100%;
     padding: 0 1em;
-    background-color: #0f1214;
+    background-color: #0C1823;
     border-radius: 10px;
     font-size: 1.4rem;
     box-shadow: -2px 4px 7px 2px black;
@@ -76,7 +83,7 @@ nav {
 }
 
 .lib-menu {
-    right: 7.5em;
+    right: 7.25em;
 }
 
 .home {

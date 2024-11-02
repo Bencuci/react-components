@@ -1,0 +1,42 @@
+/* LAYOUTS */
+.gallery {
+    padding: 0 1em;
+}
+
+.gallery section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1em;
+}
+
+.gallery article {
+    display: flex;
+    flex-direction: column;
+    gap: 1em;
+}
+
+.gallery .badge-container {
+    display: flex;
+}
+
+
+/* TEXTS */
+.gallery article h3 {
+    align-self: center;
+    margin: 0;
+}
+
+.gallery article ul {
+    margin: 0;
+    padding: 0 0 0 1.3em;
+    font-size: .8rem;
+}
+
+.gallery ul li {
+    padding: .3em 0;
+}
+
+.gallery article span {
+    font-weight: bold;
+}

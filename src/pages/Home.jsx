@@ -11,7 +11,7 @@ export default function Home() {
                 <h2>Code Faster</h2>
                 <h3>with intuitive React components</h3>
                 <p>I, Benjamin Cuci, built react components that you can easily add to your React projects as components.</p>
-                <Link className="discover" to="/howto">Discover</Link>
+                <Link className="discover" to="/gallery">Discover</Link>
             </div>
         </div>
     )
