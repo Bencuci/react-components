@@ -122,10 +122,16 @@ nav {
 }
 
 .site-logo {
+    display: flex;
+    align-items: center;
     font-size: 1.4rem;
     color: #0073e6;
     font-family: "Oxanium", sans-serif;
     letter-spacing: .1em;
+}
+
+.site-logo span {
+    margin-top: .11em;
 }
 
 .extra-links {
@@ -209,7 +215,7 @@ button span {
     color: #00a7fb;
 }
 
-.discover {
+.home-text .discover {
     padding: .6em 3.4em;
     font-size: 1.2rem;
     font-weight: bold;
@@ -222,7 +228,7 @@ button span {
     margin: .3em 0 1em
 }
 
-.discover:hover {
+.home-text .discover:hover {
     background-color: #0073e68a;
     transform: scale(1.1);
     color: whitesmoke;
@@ -236,7 +242,6 @@ button span {
 header img {
     width: 40px;
     margin-right: 1em;
-    margin-bottom: .3em;
 }
 
 .home img {
@@ -291,7 +296,7 @@ nav hr {
         font-size: 1.8rem;
     }
 
-    .discover {
+    .home-text .discover {
         padding: 1em 3.4em;
         font-size: 2rem;
         border-radius: 15px;
@@ -332,7 +337,7 @@ nav hr {
         gap: .5em;
     }
 
-    .discover {
+    .home-text .discover {
         padding: .7em 3.2em;
         font-size: 2rem;
         border-radius: 15px;
@@ -350,7 +355,7 @@ nav hr {
         max-width: 580px;
     }
 
-    .discover {
+    .home-text .discover {
         padding: .7em 3.2em;
         font-size: 2rem;
         border-radius: 15px;
@@ -370,9 +375,13 @@ nav hr {
     }
 }
 
-@media (max-width: 400px) {
+@media (min-width: 367px) and (max-width: 400px) {
     .site-logo {
         font-size: 1.3rem;
+    }
+
+    .site-logo span {
+        margin-top: .3em;
     }
 
     header img {
@@ -380,8 +389,69 @@ nav hr {
     }
 }
 
-@media (max-width: 364px) {
+@media (max-width: 366px) {
     .site-logo {
         font-size: 1.15rem;
+    }
+
+    .site-logo span {
+        margin-top: .3em;
+    }
+
+    header img {
+        margin-right: .3em;
+    }
+}
+
+/* Library components responsive styling only for showcase */
+@media (min-width: 600px) {
+    /* Badges */
+    .badge {
+        padding: .4em .8em !important;
+        font-size: 1.7rem;
+    }
+
+    .pill {
+        border-radius: 40px !important;
+    }
+
+    /* Banners */
+    .banner {
+        border-radius: 10px !important;
+        padding: 1.2em 1.5em !important;
+    }
+    
+    .banner-head {
+        margin-bottom: .8em !important;
+        font-size: 1.5rem;
+    }
+    
+    .banner-text {
+        margin-left: 2.1em !important;
+        font-size: 1.25rem;
+    }
+
+    /* Cards */
+    .card {
+        margin-top: 2em !important;
+        border-radius: 15px !important;
+        padding: 2em 1.5em 1.2em !important;
+        max-width: 484px !important;
+        cursor: pointer;
+        position: relative;
+    }
+    
+    .card p {
+        font-size: 1.4rem;
+    }
+    
+    .card h3 {
+        font-size: 1.8rem;
+    }
+    
+    .card img {
+        position: absolute;
+        width: 110px;
+        top: -38px !important;
     }
 }

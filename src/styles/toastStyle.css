@@ -1,23 +1,25 @@
 .toast-list {
     display: flex;
     flex-direction: column;
+    align-items: end;
     position: fixed;
     right: 1rem;
     top: 1rem;
     gap: .4rem;
     z-index: 1000;
+    max-width: 250px;
 }
 
 .toast {
     display: flex;
     border-radius: 8px;
     border: none;
-    padding: 1em;
-    padding-right: 2em;
+    padding: .9em 1em .9em .8em;
     opacity: 0;
     transform: translateX(100%);
     transition: opacity 0.3s ease, transform 0.3s ease;
-    gap: 1rem;
+    gap: .5em;
+    box-shadow: -3px 5px 10px -2px black;
 }
 
 .toast-enter {
@@ -35,11 +37,7 @@
 }
 
 .toast h4 {
-    margin: 0 0 .4em 0;
-}
-
-.toast article {
-    margin-left: 0.5em;
+    margin: 0;
 }
 
 /* Themes */
@@ -65,4 +63,10 @@
 .toast-information p {
     background-color: #EFF6FF;
     color: #1C51B9;
+}
+
+@media (min-width: 720px) {
+    .toast-list {
+        max-width: 400px;
+    }
 }

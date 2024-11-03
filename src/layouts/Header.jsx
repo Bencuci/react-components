@@ -16,7 +16,7 @@ export default function Header() {
     // Applied style for the current page's <a> tag
     const activeStyles = {
         fontWeight: "bold",
-        textDecoration: "underline"
+        color: "#3399ff"
     }
     // Animated button's toggle function
     const collapseBtnToggle = screenWidth>1320 ? toggleLibCollapsed : toggleCollapsed
@@ -73,8 +73,7 @@ export default function Header() {
 
     return (
         <header>
-            <img src="/images/logo.png" />
-            <Link className="site-logo" to="/">Custom-Components</Link>
+            <Link className="site-logo" to="/"><img src="/images/logo.png" /><span>Custom-Components</span></Link>
 
             {/* Navigation links while above 1320px width */}
             <div className="extra-links">

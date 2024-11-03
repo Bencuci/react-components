@@ -1,6 +1,7 @@
 import React from "react"
 import "../styles/Gallery.css"
 import { Badge, Banner, Card, Testimonial, Toast, Tooltip } from "../components-library/"
+import { Link } from "react-router-dom"
 
 export default function Gallery() {
     return (
@@ -25,6 +26,7 @@ export default function Gallery() {
                     <Badge>99+</Badge>
                     <Badge theme="indigo" shape="square">Free</Badge>
                 </div>
+                <Link to="/badges" className="discover-btn">Discover Badges</Link>
             </section>
             
             <section>
@@ -37,15 +39,16 @@ export default function Gallery() {
                     </ul>
                 </article>
                 <div className="banner-container">
-                    <Banner theme="success">
+                    <Banner theme="neutral">
                         <Banner.Head>
-                            Congratulations!
+                            Important!
                         </Banner.Head>
                         <Banner.Text>
                             You have found a very easy way to implement custom components!
                         </Banner.Text>
                     </Banner>
                 </div>
+                <Link to="/banners" className="discover-btn">Discover Banners</Link>
             </section>
 
             <section>
@@ -65,6 +68,7 @@ export default function Gallery() {
                         Components are designed for Developers to utilize them, without struggle.
                     </Card>
                 </div>
+                <Link to="/cards" className="discover-btn">Discover Cards</Link>
             </section>
 
             <section>
@@ -85,6 +89,7 @@ export default function Gallery() {
                         I love using Benjamin's custom components. They are so easy to use and customize. It helps a lot when developing!
                     </Testimonial>
                 </div>
+                <Link to="/testimonials" className="discover-btn">Discover Testimonials</Link>
             </section>
 
             <section>
@@ -108,7 +113,20 @@ export default function Gallery() {
                             I allow everyone to use the components I created, for free.
                         </Tooltip.Popup>
                     </Tooltip>
+
+                    <Tooltip
+                        title="Easter Egg"
+                        theme="light-gray"
+                    >
+                        <Tooltip.Trigger>
+                            <button className="toast-tooltip-trigger">Tooltip: Hover</button>
+                        </Tooltip.Trigger>
+                        <Tooltip.Popup>
+                            I allow everyone to use the components I created, for free.
+                        </Tooltip.Popup>
+                    </Tooltip>
                 </div>
+                <Link to="/tooltips" className="discover-btn">Discover Tooltips</Link>
             </section>
 
             <section>
@@ -120,17 +138,28 @@ export default function Gallery() {
                         <li><span>User Prompts: </span> Helping users understand features without disrupting layout.</li>
                     </ul>
                 </article>
-                <div className="toasts-container">
+                <div className="toast-container">
                     <Toast>
-                        <Toast.Trigger
-                            variant="information"
-                            title="Mail"
-                            text="You have got a new mail!"
-                        >
-                            <button className="toast-tooltip-trigger">Trigger Notification</button>
-                        </Toast.Trigger>
+                        <div className="toast-triggers-container">
+                            <Toast.Trigger
+                                variant="information"
+                                title="Mail"
+                                text="You have got a new mail!"
+                            >
+                                <button className="toast-tooltip-trigger">Trigger Notification</button>
+                            </Toast.Trigger>
+                            
+                            <Toast.Trigger
+                                variant="success"
+                                title="Deployment"
+                                text="Project successfully deployed!"
+                            >
+                                <button className="toast-tooltip-trigger">Trigger Notification</button>
+                            </Toast.Trigger>
+                        </div>
                     </Toast>
                 </div>
+                <Link to="/toasts" className="discover-btn">Discover Toasts</Link>
             </section>
         </div>
     )

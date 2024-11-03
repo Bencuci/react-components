@@ -1,6 +1,9 @@
 /* LAYOUTS */
 .gallery {
     padding: 0 .4em;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
 .gallery section {
@@ -8,35 +11,48 @@
     flex-direction: column;
     align-items: center;
     gap: 1em;
-    padding: 1.3em 0;
+    padding: 2em 0;
     border-bottom: 1px solid black;
 }
 
 .gallery article {
     display: flex;
     flex-direction: column;
+    max-width: 500px;
     gap: .5em;
 }
 
-.gallery .badge-container {
+.gallery .badge-container,
+.gallery .toast-triggers-container {
     display: grid;
     grid-template-columns: 1fr 1fr;
     gap: 1em 15vw;
 }
 
+.gallery .toast-triggers-container {
+    gap: 1em 5vw;
+}
+
+.gallery .tooltip-container {
+    display: flex;
+    flex-direction: column;
+    gap: .5em;
+}
 
 /* TEXTS */
 .gallery section h1 {
     margin: -.8em 0 0;
+    color: #3399ff;
 }
 
-.gallery section p {
-    margin: 0
+.gallery section:scope>p {
+    margin: 0 3vw;
 }
 
 .gallery article h3 {
     align-self: center;
     margin: 0;
+    color: #3399ff;
 }
 
 .gallery article ul {
@@ -54,15 +70,110 @@
 }
 
 /* Others */
-.toast-tooltip-trigger {
-    padding: 1em 3em;
+.toast-tooltip-trigger,
+.gallery .discover-btn {
     background-color: transparent;
     color: #3399ff;
     border: 1px solid #0073e6;
-    border-radius: 50px;
     cursor: pointer;
+    transition: background-color 300ms ease;
 }
 
-.toast-tooltip-trigger:hover {
+.toast-tooltip-trigger:hover,
+.gallery .discover-btn:hover {
     background-color: #0C1823;
+}
+
+.toast-tooltip-trigger {
+    padding: .8em 1em;
+    border-radius: 7px;
+}
+
+.gallery .discover-btn {
+    text-align: center;
+    width: 260px;
+    padding: .8em 0;
+    border-radius: 50px;
+}
+
+@media (min-width: 1000px) {
+    .gallery section {
+        gap: 2.5em;
+    }
+
+    .gallery article {
+        max-width: 700px;
+        gap: 1.3em;
+    }
+
+    .gallery section h1 {
+        margin: 0;
+        font-size: 2.5rem;
+    }
+    
+    .gallery article h3 {
+        font-size: 1.7rem;
+    }
+    
+    .gallery article ul {
+        padding: .2em 0 .2em 1.3em;
+        font-size: 1.3rem;
+    }
+    
+    .gallery ul li {
+        padding: .3em 0;
+    }
+
+    .gallery .discover-btn {
+        width: 320px;
+        padding: 1em 0;
+        border-radius: 50px;
+    }
+}
+
+@media (min-width: 760px) and (max-width: 999px) {
+    .gallery section {
+        gap: 2em;
+    }
+
+    .gallery article {
+        max-width: 600px;
+        gap: 1em;
+    }
+
+    .gallery section h1 {
+        margin: 0;
+        font-size: 2.2rem;
+    }
+    
+    .gallery article h3 {
+        font-size: 1.5rem;
+    }
+    
+    .gallery article ul {
+        padding: .2em 0 .2em 1.3em;
+        font-size: 1rem;
+    }
+    
+    .gallery ul li {
+        padding: .3em 0;
+    }
+
+    .gallery .discover-btn {
+        width: 320px;
+        padding: 1em 0;
+        border-radius: 50px;
+    }
+}
+
+@media (min-width: 550px) {
+    .gallery .tooltip-container {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 1em 5vw;
+    }
+
+    .gallery section:scope>p {
+        margin: 0 10vw;
+    }
 }

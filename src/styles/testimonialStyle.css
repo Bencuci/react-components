@@ -68,6 +68,7 @@ article aside {
         gap: 1.7em;
         position: relative;
         height: 380px;
+        margin: 3em 0;
     }
 
     .testimonial {
