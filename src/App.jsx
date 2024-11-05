@@ -4,6 +4,7 @@ import MainLayout from "./layouts/MainLayout"
 import Home from "./pages/Home"
 import About from "./pages/About"
 import Gallery from "./pages/Gallery"
+import Badges from "./pages/Badges"
 
 export default function App() {
     return (
@@ -13,6 +14,7 @@ export default function App() {
                     <Route index element={<Home />} />
                     <Route path="about" element={<About />} />
                     <Route path="gallery" element={<Gallery />} />
+                    <Route path="badges" element={<Badges />} />
                 </Route>
             </Routes>
         </Router>

@@ -1,0 +1,140 @@
+const badgeData = [
+    {
+        role: "header",
+        key: 1001,
+        theme: "gray"
+    },
+    {
+        role: "cell",
+        key: 1,
+        theme: "gray",
+        shape: "square"
+    },
+    {
+        role: "cell",
+        key: 2,
+        theme: "gray",
+        shape: "pill"
+    },
+    {
+        role: "header",
+        key: 1002,
+        theme: "red"
+    },
+    {
+        role: "cell",
+        key: 3,
+        theme: "red",
+        shape: "square"
+    },
+    {
+        role: "cell",
+        key: 4,
+        theme: "red",
+        shape: "pill"
+    },
+    {
+        role: "header",
+        key: 1003,
+        theme: "yellow"
+    },
+    {
+        role: "cell",
+        key: 5,
+        theme: "yellow",
+        shape: "square"
+    },
+    {
+        role: "cell",
+        key: 6,
+        theme: "yellow",
+        shape: "pill"
+    },
+    {
+        role: "header",
+        key: 1004,
+        theme: "green"
+    },
+    {
+        role: "cell",
+        key: 7,
+        theme: "green",
+        shape: "square"
+    },
+    {
+        role: "cell",
+        key: 8,
+        theme: "green",
+        shape: "pill"
+    },
+    {
+        role: "header",
+        key: 1005,
+        theme: "blue"
+    },
+    {
+        role: "cell",
+        key: 9,
+        theme: "blue",
+        shape: "square"
+    },
+    {
+        role: "cell",
+        key: 10,
+        theme: "blue",
+        shape: "pill"
+    },
+    {
+        role: "header",
+        key: 1006,
+        theme: "indigo"
+    },
+    {
+        role: "cell",
+        key: 11,
+        theme: "indigo",
+        shape: "square"
+    },
+    {
+        role: "cell",
+        key: 12,
+        theme: "indigo",
+        shape: "pill"
+    },
+    {
+        role: "header",
+        key: 1007,
+        theme: "purple"
+    },
+    {
+        role: "cell",
+        key: 13,
+        theme: "purple",
+        shape: "square"
+    },
+    {
+        role: "cell",
+        key: 14,
+        theme: "purple",
+        shape: "pill"
+    },
+    {
+        role: "header",
+        key: 1008,
+        theme: "pink"
+    },
+    {
+        role: "cell",
+        key: 15,
+        theme: "pink",
+        shape: "square"
+    },
+    {
+        role: "cell",
+        key: 16,
+        theme: "pink",
+        shape: "pill"
+    }
+]
+
+export {badgeData}

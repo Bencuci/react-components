@@ -1,0 +1,65 @@
+.badges-page-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 2em;
+}
+
+.code-block {
+    background-color: #0C1823;
+    align-self: normal;
+    border: 1px solid #0073e677;
+    border-radius: 8px;
+    pointer-events: none;
+}
+
+.variant-table {
+    display: grid;
+    grid-template-columns: auto 1fr 1fr;
+    background-color: #0C1823;
+    border-radius: 20px;
+    padding: 1em;
+}
+
+.variant-table > * {
+    padding: .4em;
+    border-radius: 6px;
+}
+
+.cell:hover {
+    background-color: #0073e655;
+}
+
+.cell.selected {
+    animation: lightUp 1.5s ease-in-out infinite;
+}
+
+.col-header,
+.row-header,
+.empty {
+    border: none;
+}
+
+.col-header,
+.row-header {
+    border: 2px solid #0073e655;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}    
+
+@keyframes lightUp {
+    0%, 100% {
+        background-color: #0073e699;
+    }
+    50% {
+        background-color: transparent;
+    }
+}
+
+@media (min-width: 600px) {
+    .col-header,
+    .row-header {
+        font-size: 1.6rem;
+    }
+}
