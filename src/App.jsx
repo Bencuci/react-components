@@ -5,10 +5,12 @@ import Home from "./pages/Home"
 import About from "./pages/About"
 import Gallery from "./pages/Gallery"
 import Badges from "./pages/Badges"
+import { ScrollToTop } from "./utils/utils"
 
 export default function App() {
     return (
         <Router>
+            <ScrollToTop />
             <Routes>
                 <Route path="/" element={<MainLayout />} >
                     <Route index element={<Home />} />
