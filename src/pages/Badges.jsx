@@ -102,30 +102,30 @@ export default function Badges() {
             <hr />
             <h3 style={{marginTop: "-.5em"}}>Props</h3>
             <div className="props-container">
-                <h4>name</h4>
-                <h4>type</h4>
-                <h4>default</h4>
-                <h4>description</h4>
+                <div className="props-header">name</div>
+                <div className="props-header">type</div>
+                <div className="props-header">default</div>
+                <div className="props-header">description</div>
                 
-                <p>theme</p>
-                <p>string</p>
-                <p>"gray"</p>
-                <p>The selected theme for your Badge.</p>
+                <div className="props-cell">theme</div>
+                <div className="props-cell">string</div>
+                <div className="props-cell">"gray"</div>
+                <div className="props-cell">The selected theme for your Badge.</div>
 
-                <p>shape</p>
-                <p>string</p>
-                <p>"square"</p>
-                <p>The selected shape for your Badge.</p>
+                <div className="props-cell">shape</div>
+                <div className="props-cell">string</div>
+                <div className="props-cell">"square"</div>
+                <div className="props-cell">The selected shape for your Badge.</div>
 
-                <p>className</p>
-                <p>string</p>
-                <p>""</p>
-                <p>Assign your own classes for further customization</p>
+                <div className="props-cell">className</div>
+                <div className="props-cell">string</div>
+                <div className="props-cell">""</div>
+                <div className="props-cell">Assign your own classes for further customization</div>
 
-                <p>style</p>
-                <p>object</p>
-                <p>{"{}"}</p>
-                <p>Assign your own styles as camelCase object properties for further customization.</p>
+                <div className="props-cell">style</div>
+                <div className="props-cell">object</div>
+                <div className="props-cell">{"{}"}</div>
+                <div className="props-cell">Assign your own styles as camelCase object properties for further customization.</div>
             </div>
         </div>
     )
