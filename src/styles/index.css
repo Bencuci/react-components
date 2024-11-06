@@ -269,7 +269,7 @@ nav hr {
     text-align: center;
 }
 
-/* SCROLLBAR
+/* SCROLLBAR */
 ::-webkit-scrollbar {
     width: 8px;
     height: 8px;
@@ -310,7 +310,7 @@ scrollbar-thumb {
 
 scrollbar-thumb:hover {
     background-color: #0073e6;
-} */
+}
 
 /* Desktop layouts */
 @media (min-width: 1320px) {
