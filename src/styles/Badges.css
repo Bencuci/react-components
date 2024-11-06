@@ -25,9 +25,9 @@
     grid-template-columns: auto 1fr 1fr 60vw;
     width: 85vw;
     margin-bottom: 2em;
-    overflow-x: auto;
-    overflow-y: visible;
-    min-height: 290px;
+    overflow-x: scroll;
+    max-height: 100vh;
+    overflow-y: hidden;
 }
 
 .props-container > * {
