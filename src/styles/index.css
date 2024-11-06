@@ -268,6 +268,49 @@ nav hr {
     text-align: center;
 }
 
+/* SCROLLBAR */
+::-webkit-scrollbar {
+    width: 8px;
+    height: 8px;
+}
+
+::-webkit-scrollbar-track {
+    background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+    background-color: #0073e677;
+    border-radius: 10px;
+    border: 2px solid #0073e677;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background-color: #0073e6;
+}
+
+::-webkit-scrollbar-corner {
+    background: transparent;
+}
+
+scrollbar {
+    width: 8px;
+    height: 8px;
+}
+
+scrollbar-track {
+    background: transparent;
+}
+
+scrollbar-thumb {
+    background-color: #0073e677;
+    border-radius: 10px;
+    border: 2px solid #0073e677;
+}
+
+scrollbar-thumb:hover {
+    background-color: #0073e6;
+}
+
 /* Desktop layouts */
 @media (min-width: 1320px) {
     header {

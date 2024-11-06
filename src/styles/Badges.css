@@ -2,15 +2,50 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    gap: 2em;
+    gap: 1em;
 }
 
-.code-block {
+.cancel-gap {
+    margin-top: -1em;
+    margin-bottom: -1em;
+}
+
+.code-block,
+.sample-code-block {
     background-color: #0C1823;
-    align-self: normal;
+    align-self: center;
     border: 1px solid #0073e677;
     border-radius: 8px;
     pointer-events: none;
+    width: 282px;
+}
+
+.props-container {
+    display: grid;
+    grid-template-columns: auto 1fr 1fr 60vw;
+    width: 85vw;
+    margin-bottom: 2em;
+    overflow-x: scroll;
+}
+
+.props-container > * {
+    border: 1px solid #0073e655;
+    padding: 1em;
+}
+
+.sample-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 2vw;
+}
+
+.sample-code-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 2em;
 }
 
 .variant-table {
@@ -31,7 +66,12 @@
 }
 
 .cell.selected {
-    animation: lightUp 1.5s ease-in-out infinite;
+    animation: lightUp 1.3s ease-in-out infinite;
+}
+
+.col-header.selected,
+.row-header.selected {
+    background-color: #0073e655;
 }
 
 .col-header,
@@ -42,11 +82,47 @@
 
 .col-header,
 .row-header {
-    border: 2px solid #0073e655;
+    border: 2px solid #0073e6aa;
+    border-radius: 3px;
     display: flex;
     align-items: center;
     justify-content: center;
-}    
+    align-self: center;
+    margin: 0 .3em;
+    padding: 0.1em .5em;
+    pointer-events: none;
+}
+
+.col-header {
+    margin-bottom: .3em;
+}
+
+.col-header.pill {
+    border-radius: 14px;
+}
+
+.badges-page-container h3 {
+    margin: .5em 0 -.3em 0;
+}
+
+.props-container h4,
+.props-container p {
+    margin: 0 !important;
+    display: flex;
+    height: 100%;
+    justify-content: center;
+    align-items: center;
+}
+
+.badges-page-container p {
+    margin: -.3em 0;
+}
+
+.badges-page-container hr {
+    max-width: 800px;
+    width: 80%;
+}
+
 
 @keyframes lightUp {
     0%, 100% {
@@ -57,9 +133,22 @@
     }
 }
 
-@media (min-width: 600px) {
+@media (min-width: 819px) {
+    .sample-container {
+        flex-direction: row;
+        gap: 5vw;
+    }
+}
+
+@media (min-width: 600px){
     .col-header,
     .row-header {
         font-size: 1.6rem;
+    }
+
+    .props-container{
+        grid-template-columns: auto 1fr 1fr auto;
+        width: 85vw;
+        max-width: 800px
     }
 }
