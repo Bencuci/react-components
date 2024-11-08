@@ -1,0 +1,13 @@
+.library-page-container .card {
+    padding: 2em;
+}
+
+.library-page-container .card .card-title {
+    margin: .3em 0 1em;
+}
+
+@media (min-width: 600px) {
+    .library-page-container .card {
+        padding: 3em;
+    }
+}

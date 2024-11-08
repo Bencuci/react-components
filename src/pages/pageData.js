@@ -137,4 +137,70 @@ const badgeData = [
     }
 ]
 
-export {badgeData}
+const bannerData = [
+    {
+        role: "header",
+        key: 1001,
+        theme: "information"
+    },
+    {
+        role: "cell",
+        key: 1,
+        theme: "information"
+    },
+    {
+        role: "header",
+        key: 1002,
+        theme: "success"
+    },
+    {
+        role: "cell",
+        key: 2,
+        theme: "success"
+    },
+    {
+        role: "header",
+        key: 1003,
+        theme: "warning"
+    },
+    {
+        role: "cell",
+        key: 3,
+        theme: "warning"
+    },
+    {
+        role: "header",
+        key: 1004,
+        theme: "error"
+    },
+    {
+        role: "cell",
+        key: 4,
+        theme: "error"
+    }
+]
+
+const testimonialData = [
+    {
+        role: "header",
+        key: 1001,
+        variant: "non-image"
+    },
+    {
+        role: "cell",
+        key: 1,
+        variant: "non-image"
+    },
+    {
+        role: "header",
+        key: 1002,
+        variant: "image"
+    },
+    {
+        role: "cell",
+        key: 2,
+        variant: "image"
+    }
+]
+
+export { badgeData, bannerData, testimonialData }

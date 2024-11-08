@@ -479,7 +479,7 @@ scrollbar-thumb:hover {
     .card {
         margin-top: 2em !important;
         border-radius: 15px !important;
-        padding: 2em 1.5em 1.2em !important;
+        padding: 2em 1.5em 1.2em;
         max-width: 484px !important;
         cursor: pointer;
         position: relative;

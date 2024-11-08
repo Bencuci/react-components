@@ -39,7 +39,7 @@ export default function Gallery() {
                     </ul>
                 </article>
                 <div className="banner-container">
-                    <Banner theme="neutral">
+                    <Banner theme="information">
                         <Banner.Head>
                             Important!
                         </Banner.Head>

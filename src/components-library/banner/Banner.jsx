@@ -5,7 +5,7 @@ import classnames from "classnames"
 const BannerContext = React.createContext()
 export { BannerContext }
 
-export default function Banner({theme = "neutral", headStyle, textStyle, children, className, ...rest}) {
+export default function Banner({theme = "information", headStyle, textStyle, children, className, ...rest}) {
     const allClasses = classnames('banner', className, theme)
 
     return (

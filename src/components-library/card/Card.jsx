@@ -6,7 +6,7 @@ export default function Card({children, title, iconPath="/images/cardIcon.png", 
     return (
         <div className={classnames("card", rest.className)}>
             <img src={iconPath}/>
-            <h3>{title}</h3>
+            <h3 className="card-title">{title}</h3>
             <p>{children}</p>
         </div>
     )

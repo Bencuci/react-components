@@ -1,6 +1,6 @@
 import React, { useState, useEffect, useMemo } from "react"
-import { Badge } from "../components-library/"
-import { badgeData } from "./pageData"
+import { Banner } from "../components-library/"
+import { bannerData } from "./pageData"
 import { capitalize } from "/src/utils/utils"
 import Editor from "react-simple-code-editor"
 import { highlight, languages } from "prismjs/components/prism-core"
@@ -8,44 +8,38 @@ import 'prismjs/components/prism-clike'
 import 'prismjs/components/prism-javascript'
 import 'prismjs/themes/prism-okaidia.css'
 import "../styles/Badges.css"
+import "../styles/Banners.css"
 
-export default function Badges() {
+export default function Banners() {
     const [selectedCell, setSelectedCell] = useState(null)
     const [selectedRowHead, setSelectedRowHead] = useState(null)
-    const [selectedColHead, setSelectedColHead] = useState(null)
     const [importCode] = useState(
-        `import { Badge } from 'custom-components'`
+        `import { Banner } from 'custom-components'`
     )
     const [sampleCode, setSampleCode] = useState(
-        `<Badge\n    theme="blue"\n    shape="pill"\n>\n    Sample\n</Badge>`
-    )
-    
-    const selectedShape = useMemo(() => 
-        selectedColHead % 2 === 0 ? "pill" : "square", 
-    [selectedColHead]
+        `<Banner theme="neutral">\n    <Banner.Head>\n        Title\n    </Banner.Head>\n    <Banner.Text>\n        Your text\n    </Banner.Text>\n</Banner>`
     )
     const selectedThemeObj = useMemo(() => 
-        badgeData.find( badge => badge.key === selectedRowHead ),
+        bannerData.find( banner => banner.key === selectedRowHead ),
     [selectedRowHead]
     )
 
     useEffect(() => {
-        const theme = selectedThemeObj ? selectedThemeObj.theme : "blue"
+        const theme = selectedThemeObj ? selectedThemeObj.theme : "information"
         setSampleCode(
-            `<Badge\n    theme="${theme}"\n    shape="${selectedShape}"\n>\n    Sample\n</Badge>`
+            `<Banner theme="${theme}">\n    <Banner.Head>\n        Title\n    </Banner.Head>\n    <Banner.Text>\n        Your text\n    </Banner.Text>\n</Banner>`
         )
-    }, [selectedThemeObj, selectedShape])
+    }, [selectedThemeObj])
 
-    const handleClick = (cell, colHead, rowHead) => {
+    const handleClick = (cell, rowHead) => {
         setSelectedCell(cell)
-        setSelectedColHead(colHead)
         setSelectedRowHead(rowHead)
     }
-
+    
     return (
         <div className="library-page-container">
-            <h2>Badges</h2>
-            <p className="cancel-gap">To use the component, import as follows</p>
+            <h1>Banners</h1>
+            <p>To use the component, import as follows</p>
             <div className="code-block">
                 <Editor 
                     value={importCode}
@@ -61,27 +55,29 @@ export default function Badges() {
             <hr />
             <p className="cancel-gap" style={{marginTop: "-1em", fontStyle: "italic"}}>Click to get sample</p>
             <div className="sample-container">
-                <div className="variant-table">
-                    {/* Column Headers */}
-                    <div className="empty"></div>
-                    <h4 className={`col-header ${selectedColHead === 1 ? "selected" : ""}`}>Square</h4>
-                    <h4 className={`col-header ${selectedColHead === 0 ? "selected" : ""} pill`}>Pill</h4>
-                    
-                    {badgeData.map( badge => (
-                        badge.role === "header" ? (
-                            <h4 className={`row-header ${selectedRowHead === badge.key ? "selected" : ""}`} key={badge.key}>
-                                {capitalize(badge.theme)}
+                <div className="variant-table badges-table">
+                    {bannerData.map(banner => (
+                        banner.role === "header" ? (
+                            <h4 className={`row-header ${selectedRowHead === banner.key ? "selected" : ""}`} key={banner.key}>
+                                {capitalize(banner.theme)}
                             </h4>
                         ) : (
                             <div 
-                                className={`cell ${selectedCell === badge.key ? "selected" : ""}`}
-                                onClick={()=>handleClick(badge.key, badge.key%2, 1000+(Math.round(badge.key/2)))}
-                                key={badge.key}
+                                className={`cell ${selectedCell === banner.key ? "selected" : ""}`}
+                                onClick={()=>handleClick(banner.key, 1000+banner.key)}
+                                key={banner.key}
                             >
-                                <Badge theme={badge.theme} shape={badge.shape}>{capitalize(badge.theme)}</Badge>
+                                <Banner theme={banner.theme}>
+                                    <Banner.Head>
+                                        {capitalize(banner.theme)}
+                                    </Banner.Head>
+                                    <Banner.Text>
+                                        Example {banner.theme} banner.
+                                    </Banner.Text>
+                                </Banner>
                             </div>
-                        )              
-                    ))}
+                        ) 
+                    ))}                    
                 </div>
                 <div className="sample-code-container">
                     <h3>Sample Code</h3>
@@ -99,6 +95,7 @@ export default function Badges() {
                     </div>
                 </div>
             </div>
+
             <hr />
             <h3 style={{marginTop: "-.5em"}}>Props</h3>
             <div className="props-container">
@@ -109,23 +106,23 @@ export default function Badges() {
                 
                 <div className="props-cell">theme</div>
                 <div className="props-cell">string</div>
-                <div className="props-cell">"gray"</div>
-                <div className="props-cell">The selected theme for your Badge.</div>
-
-                <div className="props-cell">shape</div>
-                <div className="props-cell">string</div>
-                <div className="props-cell">"square"</div>
-                <div className="props-cell">The selected shape for your Badge.</div>
+                <div className="props-cell">"information"</div>
+                <div className="props-cell">The selected theme for your Banner.</div>
 
                 <div className="props-cell">className</div>
                 <div className="props-cell">string</div>
                 <div className="props-cell">""</div>
                 <div className="props-cell">Assign your own classes for further customization</div>
 
-                <div className="props-cell">style</div>
+                <div className="props-cell">headStyle</div>
                 <div className="props-cell">object</div>
                 <div className="props-cell">{"{}"}</div>
-                <div className="props-cell">Assign your own styles as camelCase object properties for further customization.</div>
+                <div className="props-cell">Assign your own styles as camelCase object properties for Banner Head section, for further customization.</div>
+
+                <div className="props-cell">textStyle</div>
+                <div className="props-cell">object</div>
+                <div className="props-cell">{"{}"}</div>
+                <div className="props-cell">Assign your own styles as camelCase object properties for Banner Text section, for further customization.</div>
             </div>
         </div>
     )

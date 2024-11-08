@@ -1,0 +1,4 @@
+.library-page-container .sample-container {
+    flex-direction: column !important;
+    gap: 2vw
+}  
