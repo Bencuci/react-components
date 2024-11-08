@@ -1,4 +1,4 @@
-.library-page-container .sample-container {
-    flex-direction: column !important;
+.sample-container.sample-container-testimonial {
+    flex-direction: column;
     gap: 2vw
 }  

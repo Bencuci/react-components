@@ -53,7 +53,7 @@ export default function Testimonials() {
             </div>
             <hr />
             <p className="cancel-gap" style={{marginTop: "-1em", fontStyle: "italic"}}>Click to get sample</p>
-            <div className="sample-container">
+            <div className="sample-container sample-container-testimonial">
                 <div className="variant-table badges-table">
                     {testimonialData.map(testimonial => (
                         testimonial.role === "header" ? (
