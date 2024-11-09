@@ -3,10 +3,8 @@ import { Badge } from "../components-library/"
 import { badgeData } from "./pageData"
 import { capitalize } from "/src/utils/utils"
 import Editor from "react-simple-code-editor"
-import { highlight, languages } from "prismjs/components/prism-core"
-import 'prismjs/components/prism-clike'
-import 'prismjs/components/prism-javascript'
-import 'prismjs/themes/prism-okaidia.css'
+import "highlight.js/styles/atom-one-dark.css"
+import hljs from "highlight.js"
 import "../styles/Badges.css"
 
 export default function Badges() {
@@ -17,7 +15,7 @@ export default function Badges() {
         `import { Badge } from 'custom-components'`
     )
     const [sampleCode, setSampleCode] = useState(
-        `<Badge\n    theme="blue"\n    shape="pill"\n>\n    Sample\n</Badge>`
+        `<Badge\n    theme='blue'\n    shape='pill'\n>\n    Blue\n</Badge>`
     )
     
     const selectedShape = useMemo(() => 
@@ -32,10 +30,14 @@ export default function Badges() {
     useEffect(() => {
         const theme = selectedThemeObj ? selectedThemeObj.theme : "blue"
         setSampleCode(
-            `<Badge\n    theme="${theme}"\n    shape="${selectedShape}"\n>\n    ${capitalize(theme)}\n</Badge>`
+            `<Badge\n    theme='${theme}'\n    shape='${selectedShape}'\n>\n    ${capitalize(theme)}\n</Badge>`
         )
     }, [selectedThemeObj, selectedShape])
 
+    function highlightCode(code) {
+        return hljs.highlightAuto(code).value
+    }
+    
     const handleClick = (cell, colHead, rowHead) => {
         setSelectedCell(cell)
         setSelectedColHead(colHead)
@@ -50,7 +52,7 @@ export default function Badges() {
                 <Editor 
                     value={importCode}
                     onValueChange={() => {}}
-                    highlight={code => highlight(code, languages.js)}
+                    highlight={code => highlightCode(code)}
                     padding={13}
                     style={{
                         fontFamily: '"Fira code", "Fira Mono", monospace',
@@ -89,7 +91,7 @@ export default function Badges() {
                         <Editor 
                             value={sampleCode}
                             onValueChange={() => {}}
-                            highlight={code => highlight(code, languages.js)}
+                            highlight={code => highlightCode(code)}
                             padding={22}
                             style={{
                                 fontFamily: '"Fira code", "Fira Mono", monospace',

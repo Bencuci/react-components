@@ -3,10 +3,8 @@ import { Toast } from "../components-library/"
 import { toastData } from "./pageData"
 import { capitalize } from "/src/utils/utils"
 import Editor from "react-simple-code-editor"
-import { highlight, languages } from "prismjs/components/prism-core"
-import 'prismjs/components/prism-clike'
-import 'prismjs/components/prism-javascript'
-import 'prismjs/themes/prism-okaidia.css'
+import "highlight.js/styles/atom-one-dark.css"
+import hljs from "highlight.js"
 import "../styles/Badges.css"
 import "../styles/Toasts.css"
 
@@ -17,19 +15,23 @@ export default function Toasts() {
         `import { Toast } from 'custom-components'`
     )
     const [sampleCode, setSampleCode] = useState(
-        `<Toast>\n    <Toast.Trigger\n        variant="information"\n        title="Mail"\n        text="Your Text"\n    >\n        Trigger element\n    </Toast.Trigger>\n</Toast>`
+        `<Toast>\n    <Toast.Trigger\n        variant='information'\n        title='Mail'\n        text='Your Text'\n    >\n        Trigger element\n    </Toast.Trigger>\n</Toast>`
     )
     const selectedVariationObj = useMemo(() => 
         toastData.find( toast => toast.key === selectedRowHead ),
     [selectedRowHead]
     )
-
+    
     useEffect(() => {
         const variant = selectedVariationObj ? selectedVariationObj.variant : "information"
         setSampleCode(
-            `<Toast>\n    <Toast.Trigger\n        variant=${variant}\n        title="${capitalize(variant)}"\n        text="${variant} toast"\n    >\n        Trigger element\n    </Toast.Trigger>\n</Toast>`
+            `<Toast>\n    <Toast.Trigger\n        variant='${variant}'\n        title='${capitalize(variant)}'\n        text='${variant} toast'\n    >\n        Trigger element\n    </Toast.Trigger>\n</Toast>`
         )
     }, [selectedVariationObj])
+    
+    function highlightCode(code) {
+        return hljs.highlightAuto(code).value
+    }
 
     const handleClick = (cell, rowHead) => {
         setSelectedCell(cell)
@@ -44,7 +46,7 @@ export default function Toasts() {
                 <Editor 
                     value={importCode}
                     onValueChange={() => {}}
-                    highlight={code => highlight(code, languages.js)}
+                    highlight={code => highlightCode(code)}
                     padding={13}
                     style={{
                         fontFamily: '"Fira code", "Fira Mono", monospace',
@@ -86,7 +88,7 @@ export default function Toasts() {
                         <Editor 
                             value={sampleCode}
                             onValueChange={() => {}}
-                            highlight={code => highlight(code, languages.js)}
+                            highlight={code => highlightCode(code)}
                             padding={14}
                             style={{
                                 fontFamily: '"Fira code", "Fira Mono", monospace',

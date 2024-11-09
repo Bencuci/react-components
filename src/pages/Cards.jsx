@@ -1,10 +1,8 @@
 import React, { useState, useEffect, useMemo } from "react"
 import { Card } from "../components-library/"
 import Editor from "react-simple-code-editor"
-import { highlight, languages } from "prismjs/components/prism-core"
-import 'prismjs/components/prism-clike'
-import 'prismjs/components/prism-javascript'
-import 'prismjs/themes/prism-okaidia.css'
+import "highlight.js/styles/atom-one-dark.css"
+import hljs from "highlight.js"
 import "../styles/Badges.css"
 import "../styles/Cards.css"
 
@@ -13,8 +11,12 @@ export default function Cards() {
         `import { Card } from 'custom-components'`
     )
     const [sampleCode] = useState(
-        `<Card\n    title="Your Card Title"\n    iconpath="path/to/yourIcon.png"\n>\n    Your Card's text.\n</Card>`
+        `<Card\n    title='Your Card Title'\n    iconpath='path/to/yourIcon.png'\n>\n    Your Cards text.\n</Card>`
     )
+
+    function highlightCode(code) {
+        return hljs.highlightAuto(code).value
+    }
 
     return (
         <div className="library-page-container">
@@ -24,7 +26,7 @@ export default function Cards() {
                 <Editor 
                     value={importCode}
                     onValueChange={() => {}}
-                    highlight={code => highlight(code, languages.js)}
+                    highlight={code => highlightCode(code)}
                     padding={13}
                     style={{
                         fontFamily: '"Fira code", "Fira Mono", monospace',
@@ -46,7 +48,7 @@ export default function Cards() {
                         <Editor 
                             value={sampleCode}
                             onValueChange={() => {}}
-                            highlight={code => highlight(code, languages.js)}
+                            highlight={code => highlightCode(code)}
                             padding={13}
                             style={{
                                 fontFamily: '"Fira code", "Fira Mono", monospace',

@@ -3,10 +3,8 @@ import { Testimonial } from "../components-library/"
 import { testimonialData } from "./pageData"
 import { capitalize } from "/src/utils/utils"
 import Editor from "react-simple-code-editor"
-import { highlight, languages } from "prismjs/components/prism-core"
-import 'prismjs/components/prism-clike'
-import 'prismjs/components/prism-javascript'
-import 'prismjs/themes/prism-okaidia.css'
+import "highlight.js/styles/atom-one-dark.css"
+import hljs from "highlight.js"
 import "../styles/Testimonials.css"
 
 export default function Testimonials() {
@@ -16,7 +14,7 @@ export default function Testimonials() {
         `import { Testimonial } from 'custom-components'`
     )
     const [sampleCode, setSampleCode] = useState(
-        `<Testimonial\n    name="John Doe"\n    title="React Developer"\n    imgPath="/path"\n>\n    Testimonial text\n</Testimonial>`
+        `<Testimonial\n    name='May Andersons'\n    title='React Developer'\n>\n    Testimonial text\n</Testimonial>`
     )
     const selectedVariationObj = useMemo(() => 
         testimonialData.find( testimonial => testimonial.key === selectedRowHead ),
@@ -26,10 +24,14 @@ export default function Testimonials() {
     useEffect(() => {
         const variant = selectedVariationObj ? selectedVariationObj.variant : "non-image"
         setSampleCode(
-            `<Testimonial\n    name="May Andersons"\n    title="React Developer"\n${variant === "non-image" ?  '' : '    imgPath="/path"\n'}>\n    Testimonial text\n</Testimonial>`
+            `<Testimonial\n    name='May Andersons'\n    title='React Developer'\n${variant === "non-image" ?  "" : "    imgPath='/path'\n"}>\n    Testimonial\n</Testimonial>`
         )
     }, [selectedVariationObj])
 
+    function highlightCode(code) {
+        return hljs.highlightAuto(code).value
+    }
+    
     const handleClick = (cell, rowHead) => {
         setSelectedCell(cell)
         setSelectedRowHead(rowHead)
@@ -43,7 +45,7 @@ export default function Testimonials() {
                 <Editor 
                     value={importCode}
                     onValueChange={() => {}}
-                    highlight={code => highlight(code, languages.js)}
+                    highlight={code => highlightCode(code)}
                     padding={13}
                     style={{
                         fontFamily: '"Fira code", "Fira Mono", monospace',
@@ -83,7 +85,7 @@ export default function Testimonials() {
                         <Editor 
                             value={sampleCode}
                             onValueChange={() => {}}
-                            highlight={code => highlight(code, languages.js)}
+                            highlight={code => highlightCode(code)}
                             padding={14}
                             style={{
                                 fontFamily: '"Fira code", "Fira Mono", monospace',

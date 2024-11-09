@@ -3,10 +3,8 @@ import { Banner } from "../components-library/"
 import { bannerData } from "./pageData"
 import { capitalize } from "/src/utils/utils"
 import Editor from "react-simple-code-editor"
-import { highlight, languages } from "prismjs/components/prism-core"
-import 'prismjs/components/prism-clike'
-import 'prismjs/components/prism-javascript'
-import 'prismjs/themes/prism-okaidia.css'
+import "highlight.js/styles/atom-one-dark.css"
+import hljs from "highlight.js"
 import "../styles/Badges.css"
 import "../styles/Banners.css"
 
@@ -17,7 +15,7 @@ export default function Banners() {
         `import { Banner } from 'custom-components'`
     )
     const [sampleCode, setSampleCode] = useState(
-        `<Banner theme="neutral">\n    <Banner.Head>\n        Title\n    </Banner.Head>\n    <Banner.Text>\n        Your text\n    </Banner.Text>\n</Banner>`
+        `<Banner\n    theme='information'\n>\n    <Banner.Head>\n        Title\n    </Banner.Head>\n    <Banner.Text>\n        Your text\n    </Banner.Text>\n</Banner>`
     )
     const selectedThemeObj = useMemo(() => 
         bannerData.find( banner => banner.key === selectedRowHead ),
@@ -27,10 +25,14 @@ export default function Banners() {
     useEffect(() => {
         const theme = selectedThemeObj ? selectedThemeObj.theme : "information"
         setSampleCode(
-            `<Banner theme="${theme}">\n    <Banner.Head>\n        ${capitalize(theme)}\n    </Banner.Head>\n    <Banner.Text>\n        Your text\n    </Banner.Text>\n</Banner>`
+            `<Banner\n    theme='${theme}'\n>\n    <Banner.Head>\n        ${capitalize(theme)}\n    </Banner.Head>\n    <Banner.Text>\n        Your text\n    </Banner.Text>\n</Banner>`
         )
     }, [selectedThemeObj])
 
+    function highlightCode(code) {
+        return hljs.highlightAuto(code).value
+    }
+    
     const handleClick = (cell, rowHead) => {
         setSelectedCell(cell)
         setSelectedRowHead(rowHead)
@@ -44,7 +46,7 @@ export default function Banners() {
                 <Editor 
                     value={importCode}
                     onValueChange={() => {}}
-                    highlight={code => highlight(code, languages.js)}
+                    highlight={code => highlightCode(code)}
                     padding={13}
                     style={{
                         fontFamily: '"Fira code", "Fira Mono", monospace',
@@ -85,7 +87,7 @@ export default function Banners() {
                         <Editor 
                             value={sampleCode}
                             onValueChange={() => {}}
-                            highlight={code => highlight(code, languages.js)}
+                            highlight={code => highlightCode(code)}
                             padding={22}
                             style={{
                                 fontFamily: '"Fira code", "Fira Mono", monospace',

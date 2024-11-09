@@ -3,10 +3,8 @@ import { Tooltip } from "../components-library/"
 import { tooltipData } from "./pageData"
 import { capitalize } from "/src/utils/utils"
 import Editor from "react-simple-code-editor"
-import { highlight, languages } from "prismjs/components/prism-core"
-import 'prismjs/components/prism-clike'
-import 'prismjs/components/prism-javascript'
-import 'prismjs/themes/prism-okaidia.css'
+import "highlight.js/styles/atom-one-dark.css"
+import hljs from "highlight.js"
 import "../styles/Badges.css"
 import "../styles/Tooltips.css"
 
@@ -18,7 +16,7 @@ export default function Tooltips() {
         `import { Tooltip } from 'custom-components'`
     )
     const [sampleCode, setSampleCode] = useState(
-        `<Tooltip\n    theme="bold-gray"\n    title="bold-gray tooltip"\n>\n    <Tooltip.Trigger>\n        Trigger element\n    </Tooltip.Trigger>\n    <Tooltip.Popup>\n        Your Popup text\n    </Tooltip.Popup>\n</Tooltip>`
+        `<Tooltip\n    theme='bold-gray'\n    title='bold-gray tooltip'\n>\n    <Tooltip.Trigger>\n        Trigger element\n    </Tooltip.Trigger>\n    <Tooltip.Popup>\n        Your Popup text\n    </Tooltip.Popup>\n</Tooltip>`
     )
     
     const selectedWeight = useMemo(() => 
@@ -33,10 +31,14 @@ export default function Tooltips() {
     useEffect(() => {
         const theme = selectedThemeObj ? selectedThemeObj.theme : "blue"
         setSampleCode(
-            `<Tooltip\n    theme="${selectedWeight}-${theme}"\n    title="Easter Egg"\n>\n    <Tooltip.Trigger>\n        Trigger element\n    </Tooltip.Trigger>\n    <Tooltip.Popup>\n        Your Popup text\n    </Tooltip.Popup>\n</Tooltip>`
+            `<Tooltip\n    theme='${selectedWeight}-${theme}'\n    title='Easter Egg'\n>\n    <Tooltip.Trigger>\n        trigger element\n    </Tooltip.Trigger>\n    <Tooltip.Popup>\n        Your Popup text\n    </Tooltip.Popup>\n</Tooltip>`
         )
     }, [selectedThemeObj, selectedWeight])
 
+    function highlightCode(code) {
+        return hljs.highlightAuto(code).value
+    }
+    
     const handleClick = (cell, colHead, rowHead) => {
         setSelectedCell(cell)
         setSelectedColHead(colHead)
@@ -51,7 +53,7 @@ export default function Tooltips() {
                 <Editor 
                     value={importCode}
                     onValueChange={() => {}}
-                    highlight={code => highlight(code, languages.js)}
+                    highlight={code => highlightCode(code)}
                     padding={13}
                     style={{
                         fontFamily: '"Fira code", "Fira Mono", monospace',
@@ -100,7 +102,7 @@ export default function Tooltips() {
                         <Editor 
                             value={sampleCode}
                             onValueChange={() => {}}
-                            highlight={code => highlight(code, languages.js)}
+                            highlight={code => highlightCode(code)}
                             padding={22}
                             style={{
                                 fontFamily: '"Fira code", "Fira Mono", monospace',
