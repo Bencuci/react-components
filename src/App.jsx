@@ -8,6 +8,8 @@ import Badges from "./pages/Badges"
 import Banners from "./pages/Banners"
 import Cards from "./pages/Cards"
 import Testimonials from "./pages/Testimonials"
+import Tooltips from "./pages/Tooltips"
+import Toasts from "./pages/Toasts"
 import { ScrollToTop } from "./utils/utils"
 
 export default function App() {
@@ -23,6 +25,8 @@ export default function App() {
                     <Route path="banners" element={<Banners />} />
                     <Route path="cards" element={<Cards />} />
                     <Route path="testimonials" element={<Testimonials />} />
+                    <Route path="tooltips" element={<Tooltips />} />
+                    <Route path="toasts" element={<Toasts />} />
                 </Route>
             </Routes>
         </Router>

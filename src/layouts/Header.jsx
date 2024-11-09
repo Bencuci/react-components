@@ -170,17 +170,17 @@ export default function Header() {
                 </NavLink>
                 <hr/>
                 <NavLink
-                    to="/toasts"
-                    style={({ isActive }) => (isActive ? activeStyles : null)}
-                >
-                    Toasts
-                </NavLink>
-                <hr/>
-                <NavLink
                     to="/tooltips"
                     style={({ isActive }) => (isActive ? activeStyles : null)}
                 >
                     Tooltips
+                </NavLink>
+                <hr/>
+                <NavLink
+                    to="/toasts"
+                    style={({ isActive }) => (isActive ? activeStyles : null)}
+                >
+                    Toasts
                 </NavLink>
             </nav>
         </header>

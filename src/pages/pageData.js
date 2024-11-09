@@ -203,4 +203,118 @@ const testimonialData = [
     }
 ]
 
-export { badgeData, bannerData, testimonialData }
+const tooltipData = [
+    {
+        role: "header",
+        key: 1001,
+        theme: "gray"
+    },
+    {
+        role: "cell",
+        key: 1,
+        theme: "gray",
+        weight: "bold"
+    },
+    {
+        role: "cell",
+        key: 2,
+        theme: "gray",
+        weight: "light"
+    },
+    {
+        role: "header",
+        key: 1002,
+        theme: "blue"
+    },
+    {
+        role: "cell",
+        key: 3,
+        theme: "blue",
+        weight: "bold"
+    },
+    {
+        role: "cell",
+        key: 4,
+        theme: "blue",
+        weight: "light"
+    },
+    {
+        role: "header",
+        key: 1003,
+        theme: "purple"
+    },
+    {
+        role: "cell",
+        key: 5,
+        theme: "purple",
+        weight: "bold"
+    },
+    {
+        role: "cell",
+        key: 6,
+        theme: "purple",
+        weight: "light"
+    },
+    {
+        role: "header",
+        key: 1004,
+        theme: "green"
+    },
+    {
+        role: "cell",
+        key: 7,
+        theme: "green",
+        weight: "bold"
+    },
+    {
+        role: "cell",
+        key: 8,
+        theme: "green",
+        weight: "light"
+    },
+]
+
+const toastData = [
+    {
+        role: "header",
+        key: 1001,
+        variant: "information"
+    },
+    {
+        role: "cell",
+        key: 1,
+        variant: "information"
+    },
+    {
+        role: "header",
+        key: 1002,
+        variant: "success"
+    },
+    {
+        role: "cell",
+        key: 2,
+        variant: "success"
+    },
+    {
+        role: "header",
+        key: 1003,
+        variant: "warning"
+    },
+    {
+        role: "cell",
+        key: 3,
+        variant: "warning"
+    },
+    {
+        role: "header",
+        key: 1004,
+        variant: "error"
+    },
+    {
+        role: "cell",
+        key: 4,
+        variant: "error"
+    }
+]
+
+export { badgeData, bannerData, testimonialData, tooltipData, toastData }

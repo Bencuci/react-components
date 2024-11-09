@@ -3,7 +3,7 @@ import classnames from "classnames"
 import { TooltipContext } from "./Tooltip"
 
 export default function TooltipPopup({children, ...rest}) {
-    const {title, theme, visible, show, hide} = React.useContext(TooltipContext)
+    const {title, theme, style, visible, show, hide} = React.useContext(TooltipContext)
     const variant = theme.substring(0,3) === "lig" ? "light" : "bold"
 
     return (
@@ -16,7 +16,8 @@ export default function TooltipPopup({children, ...rest}) {
                 {"popup-showup":visible})}
             style={{
                 opacity: visible ? 1 : 0,
-                visibility: visible ? 'visible' : 'hidden'
+                visibility: visible ? 'visible' : 'hidden',
+                ...style
             }}
             onMouseOver={show}
             onMouseLeave={hide}

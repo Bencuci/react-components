@@ -1,6 +1,6 @@
 import React, { useState, useEffect, useMemo } from "react"
-import { Badge } from "../components-library/"
-import { badgeData } from "./pageData"
+import { Tooltip } from "../components-library/"
+import { tooltipData } from "./pageData"
 import { capitalize } from "/src/utils/utils"
 import Editor from "react-simple-code-editor"
 import { highlight, languages } from "prismjs/components/prism-core"
@@ -8,33 +8,34 @@ import 'prismjs/components/prism-clike'
 import 'prismjs/components/prism-javascript'
 import 'prismjs/themes/prism-okaidia.css'
 import "../styles/Badges.css"
+import "../styles/Tooltips.css"
 
-export default function Badges() {
+export default function Tooltips() {
     const [selectedCell, setSelectedCell] = useState(null)
     const [selectedRowHead, setSelectedRowHead] = useState(null)
     const [selectedColHead, setSelectedColHead] = useState(null)
     const [importCode] = useState(
-        `import { Badge } from 'custom-components'`
+        `import { Tooltip } from 'custom-components'`
     )
     const [sampleCode, setSampleCode] = useState(
-        `<Badge\n    theme="blue"\n    shape="pill"\n>\n    Sample\n</Badge>`
+        `<Tooltip\n    theme="bold-gray"\n    title="bold-gray tooltip"\n>\n    <Tooltip.Trigger>\n        Trigger element\n    </Tooltip.Trigger>\n    <Tooltip.Popup>\n        Your Popup text\n    </Tooltip.Popup>\n</Tooltip>`
     )
     
-    const selectedShape = useMemo(() => 
-        selectedColHead % 2 === 0 ? "pill" : "square", 
+    const selectedWeight = useMemo(() => 
+        selectedColHead % 2 === 0 ? "bold" : "light", 
     [selectedColHead]
     )
     const selectedThemeObj = useMemo(() => 
-        badgeData.find( badge => badge.key === selectedRowHead ),
+        tooltipData.find( tooltip => tooltip.key === selectedRowHead ),
     [selectedRowHead]
     )
 
     useEffect(() => {
         const theme = selectedThemeObj ? selectedThemeObj.theme : "blue"
         setSampleCode(
-            `<Badge\n    theme="${theme}"\n    shape="${selectedShape}"\n>\n    ${capitalize(theme)}\n</Badge>`
+            `<Tooltip\n    theme="${selectedWeight}-${theme}"\n    title="Easter Egg"\n>\n    <Tooltip.Trigger>\n        Trigger element\n    </Tooltip.Trigger>\n    <Tooltip.Popup>\n        Your Popup text\n    </Tooltip.Popup>\n</Tooltip>`
         )
-    }, [selectedThemeObj, selectedShape])
+    }, [selectedThemeObj, selectedWeight])
 
     const handleClick = (cell, colHead, rowHead) => {
         setSelectedCell(cell)
@@ -44,7 +45,7 @@ export default function Badges() {
 
     return (
         <div className="library-page-container">
-            <h2>Badges</h2>
+            <h2>Tooltips</h2>
             <p className="cancel-gap">To use the component, import as follows</p>
             <div className="code-block">
                 <Editor 
@@ -61,24 +62,34 @@ export default function Badges() {
             <hr />
             <p className="cancel-gap" style={{marginTop: "-1em", fontStyle: "italic"}}>Click to get sample</p>
             <div className="sample-container">
-                <div className="variant-table">
+                <div className="variant-table variant-table-tooltips">
                     {/* Column Headers */}
                     <div className="empty"></div>
-                    <h4 className={`col-header ${selectedColHead === 1 ? "selected" : ""}`}>Square</h4>
-                    <h4 className={`col-header ${selectedColHead === 0 ? "selected" : ""} pill`}>Pill</h4>
+                    <h4 className={`col-header ${selectedColHead === 1 ? "selected" : ""} pill`}>Bold</h4>
+                    <h4 className={`col-header ${selectedColHead === 0 ? "selected" : ""} pill`}>Light</h4>
                     
-                    {badgeData.map( badge => (
-                        badge.role === "header" ? (
-                            <h4 className={`row-header ${selectedRowHead === badge.key ? "selected" : ""}`} key={badge.key}>
-                                {capitalize(badge.theme)}
+                    {tooltipData.map( tooltip => (
+                        tooltip.role === "header" ? (
+                            <h4 className={`row-header ${selectedRowHead === tooltip.key ? "selected" : ""}`} key={tooltip.key}>
+                                {capitalize(tooltip.theme)}
                             </h4>
                         ) : (
                             <div 
-                                className={`cell ${selectedCell === badge.key ? "selected" : ""}`}
-                                onClick={()=>handleClick(badge.key, badge.key%2, 1000+(Math.round(badge.key/2)))}
-                                key={badge.key}
+                                className={`cell ${selectedCell === tooltip.key ? "selected" : ""}`}
+                                onClick={()=>handleClick(tooltip.key, tooltip.key%2, 1000+(Math.round(tooltip.key/2)))}
+                                key={tooltip.key}
                             >
-                                <Badge theme={badge.theme} shape={badge.shape}>{capitalize(badge.theme)}</Badge>
+                                <Tooltip
+                                    title="Easter Egg"
+                                    theme={`${tooltip.weight}-${tooltip.theme}`}
+                                >
+                                    <Tooltip.Trigger>
+                                        <button className="toast-tooltip-trigger">Tooltip: Hover</button>
+                                    </Tooltip.Trigger>
+                                    <Tooltip.Popup>
+                                        I allow everyone to use the components I created, for free.
+                                    </Tooltip.Popup>
+                                </Tooltip>
                             </div>
                         )              
                     ))}
@@ -109,13 +120,13 @@ export default function Badges() {
                 
                 <div className="props-cell">theme</div>
                 <div className="props-cell">string</div>
-                <div className="props-cell">"gray"</div>
-                <div className="props-cell">The selected theme for your Badge.</div>
+                <div className="props-cell">"bold-gray"</div>
+                <div className="props-cell">The selected theme for your Tooltip.</div>
 
-                <div className="props-cell">shape</div>
+                <div className="props-cell">title</div>
                 <div className="props-cell">string</div>
-                <div className="props-cell">"square"</div>
-                <div className="props-cell">The selected shape for your Badge.</div>
+                <div className="props-cell">""</div>
+                <div className="props-cell">Title for your Tooltip.</div>
 
                 <div className="props-cell">className</div>
                 <div className="props-cell">string</div>

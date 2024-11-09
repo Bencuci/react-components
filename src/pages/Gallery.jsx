@@ -140,23 +140,21 @@ export default function Gallery() {
                 </article>
                 <div className="toast-container">
                     <Toast>
-                        <div className="toast-triggers-container">
-                            <Toast.Trigger
-                                variant="information"
-                                title="Mail"
-                                text="You have got a new mail!"
-                            >
-                                <button className="toast-tooltip-trigger">Trigger Notification</button>
-                            </Toast.Trigger>
-                            
-                            <Toast.Trigger
-                                variant="success"
-                                title="Deployment"
-                                text="Project successfully deployed!"
-                            >
-                                <button className="toast-tooltip-trigger">Trigger Notification</button>
-                            </Toast.Trigger>
-                        </div>
+                        <Toast.Trigger
+                            variant="information"
+                            title="Mail"
+                            text="You have got a new mail!"
+                        >
+                            <button className="toast-tooltip-trigger">Trigger Notification</button>
+                        </Toast.Trigger>
+                        
+                        <Toast.Trigger
+                            variant="success"
+                            title="Deployment"
+                            text="Project successfully deployed!"
+                        >
+                            <button className="toast-tooltip-trigger">Trigger Notification</button>
+                        </Toast.Trigger>
                     </Toast>
                 </div>
                 <Link to="/toasts" className="discover-btn">Discover Toasts</Link>

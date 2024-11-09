@@ -19,7 +19,7 @@ export default function Toast({children, ...rest}) {
     }
 
     return (
-        <div>
+        <div className="toast-triggers-container">
             <div className="toast-list">
                 {toasts.map( toast => (
                     <ToastItem 

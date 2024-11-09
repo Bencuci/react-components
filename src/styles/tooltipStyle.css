@@ -40,12 +40,12 @@
 }
 
 .popup h3 {
-    margin: 0;
+    margin: 0 !important;
     font-size: 1rem;
 }
 
 .popup p {
-    margin: .5em 0 0 0;
+    margin: .5em 0 0 0 !important;
     color: inherit;
 }
 

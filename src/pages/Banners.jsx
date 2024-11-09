@@ -27,7 +27,7 @@ export default function Banners() {
     useEffect(() => {
         const theme = selectedThemeObj ? selectedThemeObj.theme : "information"
         setSampleCode(
-            `<Banner theme="${theme}">\n    <Banner.Head>\n        Title\n    </Banner.Head>\n    <Banner.Text>\n        Your text\n    </Banner.Text>\n</Banner>`
+            `<Banner theme="${theme}">\n    <Banner.Head>\n        ${capitalize(theme)}\n    </Banner.Head>\n    <Banner.Text>\n        Your text\n    </Banner.Text>\n</Banner>`
         )
     }, [selectedThemeObj])
 
@@ -55,7 +55,7 @@ export default function Banners() {
             <hr />
             <p className="cancel-gap" style={{marginTop: "-1em", fontStyle: "italic"}}>Click to get sample</p>
             <div className="sample-container">
-                <div className="variant-table badges-table">
+                <div className="variant-table one-col-table">
                     {bannerData.map(banner => (
                         banner.role === "header" ? (
                             <h4 className={`row-header ${selectedRowHead === banner.key ? "selected" : ""}`} key={banner.key}>

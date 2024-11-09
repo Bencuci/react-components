@@ -1,32 +1,33 @@
 import React, { useState, useEffect, useMemo } from "react"
-import { Testimonial } from "../components-library/"
-import { testimonialData } from "./pageData"
+import { Toast } from "../components-library/"
+import { toastData } from "./pageData"
 import { capitalize } from "/src/utils/utils"
 import Editor from "react-simple-code-editor"
 import { highlight, languages } from "prismjs/components/prism-core"
 import 'prismjs/components/prism-clike'
 import 'prismjs/components/prism-javascript'
 import 'prismjs/themes/prism-okaidia.css'
-import "../styles/Testimonials.css"
+import "../styles/Badges.css"
+import "../styles/Toasts.css"
 
-export default function Testimonials() {
+export default function Toasts() {
     const [selectedCell, setSelectedCell] = useState(null)
     const [selectedRowHead, setSelectedRowHead] = useState(null)
     const [importCode] = useState(
-        `import { Testimonial } from 'custom-components'`
+        `import { Toast } from 'custom-components'`
     )
     const [sampleCode, setSampleCode] = useState(
-        `<Testimonial\n    name="John Doe"\n    title="React Developer"\n    imgPath="/path"\n>\n    Testimonial text\n</Testimonial>`
+        `<Toast>\n    <Toast.Trigger\n        variant="information"\n        title="Mail"\n        text="Your Text"\n    >\n        Trigger element\n    </Toast.Trigger>\n</Toast>`
     )
     const selectedVariationObj = useMemo(() => 
-        testimonialData.find( testimonial => testimonial.key === selectedRowHead ),
+        toastData.find( toast => toast.key === selectedRowHead ),
     [selectedRowHead]
     )
 
     useEffect(() => {
-        const variant = selectedVariationObj ? selectedVariationObj.variant : "non-image"
+        const variant = selectedVariationObj ? selectedVariationObj.variant : "information"
         setSampleCode(
-            `<Testimonial\n    name="May Andersons"\n    title="React Developer"\n${variant === "non-image" ?  '' : '    imgPath="/path"\n'}>\n    Testimonial text\n</Testimonial>`
+            `<Toast>\n    <Toast.Trigger\n        variant=${variant}\n        title="${capitalize(variant)}"\n        text="${variant} toast"\n    >\n        Trigger element\n    </Toast.Trigger>\n</Toast>`
         )
     }, [selectedVariationObj])
 
@@ -37,7 +38,7 @@ export default function Testimonials() {
     
     return (
         <div className="library-page-container">
-            <h1>Testimonials</h1>
+            <h1>Toasts</h1>
             <p>To use the component, import as follows</p>
             <div className="code-block">
                 <Editor 
@@ -53,30 +54,32 @@ export default function Testimonials() {
             </div>
             <hr />
             <p className="cancel-gap" style={{marginTop: "-1em", fontStyle: "italic"}}>Click to get sample</p>
-            <div className="sample-container sample-container-testimonial">
-                <div className="variant-table one-col-table">
-                    {testimonialData.map(testimonial => (
-                        testimonial.role === "header" ? (
-                            <h4 className={`row-header ${selectedRowHead === testimonial.key ? "selected" : ""}`} key={testimonial.key}>
-                                {capitalize(testimonial.variant)}
-                            </h4>
-                        ) : (
-                            <div 
-                                className={`cell ${selectedCell === testimonial.key ? "selected" : ""}`}
-                                onClick={()=>handleClick(testimonial.key, 1000+testimonial.key)}
-                                key={testimonial.key}
-                            >
-                                <Testimonial
-                                    name="May Andersons"
-                                    title="React Developer"
-                                    imgPath={testimonial.variant === "non-image" ? null : "/images/testimonial.jpeg"}
+            <div className="sample-container sample-container-toasts">
+                <Toast>
+                    <div className="variant-table one-col-table">
+                        {toastData.map(toast => (
+                            toast.role === "header" ? (
+                                <h4 className={`row-header ${selectedRowHead === toast.key ? "selected" : ""}`} key={toast.key}>
+                                    {capitalize(toast.variant)}
+                                </h4>
+                            ) : (
+                                <div 
+                                    className={`cell ${selectedCell === toast.key ? "selected" : ""}`}
+                                    onClick={()=>handleClick(toast.key, 1000+toast.key)}
+                                    key={toast.key}
                                 >
-                                    I love using Benjamin's custom components. They are so easy to use and customize. It helps a lot when developing!
-                                </Testimonial>
-                            </div>
-                        ) 
-                    ))}                    
-                </div>
+                                    <Toast.Trigger
+                                        variant={toast.variant}
+                                        title={`${capitalize(toast.variant)}`}
+                                        text={`${toast.variant} toast`}
+                                    >
+                                        <button className="toast-tooltip-trigger">Trigger Notification</button>
+                                    </Toast.Trigger>
+                                </div>
+                            ) 
+                        ))}                    
+                    </div>
+                </Toast>
                 <div className="sample-code-container">
                     <h3>Sample Code</h3>
                     <div className="sample-code-block">
@@ -87,7 +90,7 @@ export default function Testimonials() {
                             padding={14}
                             style={{
                                 fontFamily: '"Fira code", "Fira Mono", monospace',
-                                fontSize: 16
+                                fontSize: 13
                             }}
                         />
                     </div>
@@ -102,25 +105,25 @@ export default function Testimonials() {
                 <div className="props-header">default</div>
                 <div className="props-header">description</div>
                 
-                <div className="props-cell">imgPath</div>
+                <div className="props-cell">variant</div>
                 <div className="props-cell">string</div>
-                <div className="props-cell">null</div>
-                <div className="props-cell">If you provide image path image variation; if it stays default, non-image variation applies.</div>
+                <div className="props-cell">"information"</div>
+                <div className="props-cell">Chosen type for your toast notification</div>
+
+                <div className="props-cell">title</div>
+                <div className="props-cell">string</div>
+                <div className="props-cell">""</div>
+                <div className="props-cell">Chosen title for your toast notification</div>
+
+                <div className="props-cell">text</div>
+                <div className="props-cell">string</div>
+                <div className="props-cell">""</div>
+                <div className="props-cell">Chosen body text for your toast notification</div>
 
                 <div className="props-cell">className</div>
                 <div className="props-cell">string</div>
                 <div className="props-cell">""</div>
                 <div className="props-cell">Assign your own classes for further customization</div>
-
-                <div className="props-cell">name</div>
-                <div className="props-cell">string</div>
-                <div className="props-cell">""</div>
-                <div className="props-cell">Testimonial owner's name, under the text</div>
-
-                <div className="props-cell">title</div>
-                <div className="props-cell">string</div>
-                <div className="props-cell">""</div>
-                <div className="props-cell">Testimonial owner's title, under the name</div>
             </div>
         </div>
     )

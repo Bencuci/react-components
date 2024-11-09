@@ -1,4 +1,4 @@
-.library-page-container .variant-table.badges-table {
+.library-page-container .variant-table.one-col-table {
     display: grid;
     background-color: #0C1823;
     border-radius: 20px;
@@ -12,6 +12,6 @@
 }
 
 .library-page-container .variant-table .row-header {
-    padding: .2em;
+    padding: .2em .5em;
     margin-top: .7em;
 }

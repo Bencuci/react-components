@@ -1,0 +1,5 @@
+@media (min-width: 500px) {
+    .sample-container-toasts{
+        flex-direction: row !important;
+    }
+}
