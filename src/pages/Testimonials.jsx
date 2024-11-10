@@ -5,7 +5,7 @@ import { capitalize } from "/src/utils/utils"
 import Editor from "react-simple-code-editor"
 import "highlight.js/styles/atom-one-dark.css"
 import hljs from "highlight.js"
-import "../styles/Testimonials.css"
+import "../styles/library-pages/Testimonials.css"
 
 export default function Testimonials() {
     const [selectedCell, setSelectedCell] = useState(null)
@@ -41,7 +41,7 @@ export default function Testimonials() {
         <div className="library-page-container">
             <h1>Testimonials</h1>
             <p>To use the component, import as follows</p>
-            <div className="code-block">
+            <div className="import-code-block">
                 <Editor 
                     value={importCode}
                     onValueChange={() => {}}

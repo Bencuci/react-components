@@ -5,8 +5,7 @@ import { capitalize } from "/src/utils/utils"
 import Editor from "react-simple-code-editor"
 import "highlight.js/styles/atom-one-dark.css"
 import hljs from "highlight.js"
-import "../styles/Badges.css"
-import "../styles/Banners.css"
+import "../styles/library-pages/Banners.css"
 
 export default function Banners() {
     const [selectedCell, setSelectedCell] = useState(null)
@@ -42,7 +41,7 @@ export default function Banners() {
         <div className="library-page-container">
             <h1>Banners</h1>
             <p>To use the component, import as follows</p>
-            <div className="code-block">
+            <div className="import-code-block">
                 <Editor 
                     value={importCode}
                     onValueChange={() => {}}

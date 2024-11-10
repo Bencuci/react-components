@@ -5,7 +5,7 @@ import { capitalize } from "/src/utils/utils"
 import Editor from "react-simple-code-editor"
 import "highlight.js/styles/atom-one-dark.css"
 import hljs from "highlight.js"
-import "../styles/Badges.css"
+import "../styles/library-pages/Badges.css"
 
 export default function Badges() {
     const [selectedCell, setSelectedCell] = useState(null)
@@ -48,7 +48,7 @@ export default function Badges() {
         <div className="library-page-container">
             <h2>Badges</h2>
             <p className="cancel-gap">To use the component, import as follows</p>
-            <div className="code-block">
+            <div className="import-code-block">
                 <Editor 
                     value={importCode}
                     onValueChange={() => {}}

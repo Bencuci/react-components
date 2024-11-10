@@ -3,8 +3,8 @@ import { Card } from "../components-library/"
 import Editor from "react-simple-code-editor"
 import "highlight.js/styles/atom-one-dark.css"
 import hljs from "highlight.js"
-import "../styles/Badges.css"
-import "../styles/Cards.css"
+import "../styles/library-pages/Badges.css"
+import "../styles/library-pages/Cards.css"
 
 export default function Cards() {
     const [importCode] = useState(
@@ -22,7 +22,7 @@ export default function Cards() {
         <div className="library-page-container">
             <h1>Cards</h1>
             <p>To use the component, import as follows</p>
-            <div className="code-block">
+            <div className="import-code-block">
                 <Editor 
                     value={importCode}
                     onValueChange={() => {}}
