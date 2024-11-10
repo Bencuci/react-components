@@ -87,6 +87,8 @@
 .toast-tooltip-trigger {
     padding: .8em 1em;
     border-radius: 7px;
+    color: #E06C75;
+    border: 1px solid #E06C75;
 }
 
 .gallery .discover-btn {
