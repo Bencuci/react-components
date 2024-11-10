@@ -3,7 +3,6 @@ import { Card } from "../components-library/"
 import Editor from "react-simple-code-editor"
 import "highlight.js/styles/atom-one-dark.css"
 import hljs from "highlight.js"
-import "../styles/library-pages/Badges.css"
 import "../styles/library-pages/Cards.css"
 
 export default function Cards() {

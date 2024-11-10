@@ -5,7 +5,6 @@ import { capitalize } from "/src/utils/utils"
 import Editor from "react-simple-code-editor"
 import "highlight.js/styles/atom-one-dark.css"
 import hljs from "highlight.js"
-import "../styles/library-pages/Badges.css"
 import "../styles/library-pages/Toasts.css"
 
 export default function Toasts() {

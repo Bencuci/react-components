@@ -5,7 +5,6 @@ import { capitalize } from "/src/utils/utils"
 import Editor from "react-simple-code-editor"
 import "highlight.js/styles/atom-one-dark.css"
 import hljs from "highlight.js"
-import "../styles/library-pages/Badges.css"
 import "../styles/library-pages/Tooltips.css"
 
 export default function Tooltips() {
@@ -67,8 +66,8 @@ export default function Tooltips() {
                 <div className="variant-table variant-table-tooltips">
                     {/* Column Headers */}
                     <div className="empty"></div>
-                    <h4 className={`col-header ${selectedColHead === 1 ? "selected" : ""} pill`}>Bold</h4>
-                    <h4 className={`col-header ${selectedColHead === 0 ? "selected" : ""} pill`}>Light</h4>
+                    <h4 className={`col-header ${selectedColHead === 1 ? "selected" : ""}`}>Bold</h4>
+                    <h4 className={`col-header ${selectedColHead === 0 ? "selected" : ""}`}>Light</h4>
                     
                     {tooltipData.map( tooltip => (
                         tooltip.role === "header" ? (
