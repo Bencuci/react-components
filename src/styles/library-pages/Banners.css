@@ -6,7 +6,3 @@
     grid-template-columns: 1fr;
     gap: .4em;
 }
-
-.library-page-container .variant-table .row-header {
-    padding: .2em .5em;
-}
