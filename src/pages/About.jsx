@@ -20,7 +20,7 @@ export default function About() {
                     <p><i className="fa-solid fa-envelope"></i> bunyamin.cuci@hotmail.com</p>
                     <p><i className="fa-brands fa-square-github"></i> <a href="https://github.com/Bencuci" target="_blank">Github</a></p>
                     <p><i className="fa-brands fa-linkedin"></i> <a href="https://www.linkedin.com/in/benjamin-cuci/" target="_blank">LinkedIn</a></p>
-                    <p><i className="fa-regular fa-user"></i> <a href="#">Portfolio website</a></p>
+                    <p><i className="fa-regular fa-user"></i> <a href="https://bunyamin-cuci.netlify.app/" target="_blank">Portfolio website</a></p>
                 </div>
             </div>
         </div>
